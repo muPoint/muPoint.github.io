@@ -70,7 +70,7 @@ var mouse={
 var maxRadius=250;
 var minRadius=10;
 
-var colorArray=["blue", "white", "mint", "black"];
+var colorArray=["blue", "white", "green", "black"];
 
 // Add event - mouse
 
