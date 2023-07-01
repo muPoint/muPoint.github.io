@@ -1,65 +1,8 @@
 var canvas = document.querySelector('canvas');
-
+canvas.width = window.innerWidth; /*size of canvas*/
+canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d'); /*defines possibilities for this canvas*/
-
-//Rectangles
-c.fillRect(100,100,100,100); /*(x,y,width,height)*/
-c.fillStyle = 'rgba(0,0,10,0.7)';
-c.fillRect(400,400,200,200);
-
-//Lines
-c.beginPath(); /*separates drawings*/
-c.moveTo(250,90); /*(x,y)*/
-c.lineTo(350,390);
-c.lineTo(390,290);
-c.strokeStyle = "white";
-c.lineTo(690,290);
-c.stroke(); /*makes line visible*/
-
-//Arcs
-c.beginPath();
-c.arc(450,450,30,0, Math.PI * 2, false);
-c.strokeStyle = "gray";
-c.stroke(); /*makes line visible*/
-
-//Repeat a shape
-for (var i=0; i<10; i++) {
-	var x = Math.random()*window.innerWidth;
-	var y = Math.random()*300;
-	c.beginPath();
-	c.arc(x,y,30,0, Math.PI * 2, false);
-	c.strokeStyle = "white";
-	c.stroke();
-}
-
-//Animate circle 1
-var x=Math.random()*innerWidth;
-var y=Math.random()*innerHeight;
-var dx=(Math.random()-0.5)*2; /*speed of movement*/
-var dy=(Math.random()-0.5)*2;
-var radius=15;
-
-function animate() {
-	requestAnimationFrame(animate);
-	//c.clearRect(0,0,innerWidth,innerHeight);// -> clear screen everytime
-	c.beginPath();
-	c.arc(x,y,radius,0, Math.PI * 2, false);
-	c.strokeStyle = "white";
-	c.stroke();
-	
-	if (x+radius>innerWidth || x-radius<0){
-		dx=-dx;
-	}
-	x+=dx;
-	
-	if (y+radius>innerHeight || y-radius<0){
-		dy=-dy;
-	}
-	y+=dy;
-}	
-animate();
-
 
 // store mouse coordinates
 var mouse={
@@ -163,9 +106,3 @@ function animation() {
 	
 }	
 animation();
-
-
-
-
-
-console.log(canvas);
