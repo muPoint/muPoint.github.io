@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.gallery-container {
+  width: 90%; /* Adjust the container width as needed */
+  margin: 0 auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  cursor: grab; /* Set the cursor style to "grab" when hovering over the container */
+}
+
+.gallery-container:active {
+  cursor: grabbing; /* Set the cursor style to "grabbing" when the container is being clicked and dragged */
+}
+
+.image-gallery {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+}
+
+.image-gallery li {
+  margin: 10px;
+  cursor: scrollbar-arrow-color; /* Set the cursor style to "pointer" when hovering over each image */
+}
+
+.image-gallery img {
+  width: 200px; /* Adjust the image size as needed */
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
