@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas tutorial</title>
+	<meta name="generator" content="BBEdit 14.6" />
+	
+	<style css="text/css">
+		canvas{
+			border: 1px solid black;
+			background: gray;
+			}
+		
+		body{
+			margin: 0px; /*eliminates the standard 8px*/ 
+			}
+	</style>
+	
+</head>
+
+<body>
+	<model-viewer src="https://mupoint.github.io/Untitled.glb" ar camera-controls touch-action="pan-y" poster="" shadow-intensity="1" skybox-image="" environment-image=""></model-viewer>
+</body>
+</html>
