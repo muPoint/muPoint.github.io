@@ -1,33 +1,7 @@
-function toggleMenu() {
-    var navbar = document.getElementById("navbar");
-    var menuBtn = document.querySelector(".menu-btn");
+const menuBtn = document.querySelector('.menu-btn');
+const navbar = document.querySelector('.navbar');
 
-    if (navbar.classList.contains("menu-active")) {
-        navbar.classList.remove("menu-active");
-        menuBtn.innerHTML = "&#9776;"; // Change back to burger icon
-    } else {
-        navbar.classList.add("menu-active");
-        menuBtn.innerHTML = "&#10005;"; // Change to cross icon
-    }
-}
-
-window.addEventListener("resize", function () {
-    var menuBtn = document.querySelector(".menu-btn");
-    var navbar = document.getElementById("navbar");
-
-    if (window.innerWidth <= 768) {
-        menuBtn.style.display = "block";
-        navbar.style.display = "none";
-    } else {
-        menuBtn.style.display = "none";
-        navbar.style.display = "block";
-    }
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    navbar.classList.toggle('active');
 });
-
-// Initialize menu state based on window width
-if (window.innerWidth <= 768) {
-    var menuBtn = document.querySelector(".menu-btn");
-    var navbar = document.getElementById("navbar");
-    menuBtn.style.display = "block";
-    navbar.style.display = "none";
-}
