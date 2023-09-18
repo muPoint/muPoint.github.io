@@ -15,7 +15,7 @@ window.addEventListener("resize", function () {
     var menuBtn = document.querySelector(".menu-btn");
     var navbar = document.getElementById("navbar");
 
-    if (window.innerWidth <= 2768) {
+    if (window.innerWidth <= 768) {
         menuBtn.style.display = "block";
         navbar.style.display = "none";
     } else {
@@ -25,7 +25,7 @@ window.addEventListener("resize", function () {
 });
 
 // Initialize menu state based on window width
-if (window.innerWidth <= 2768) {
+if (window.innerWidth <= 768) {
     var menuBtn = document.querySelector(".menu-btn");
     var navbar = document.getElementById("navbar");
     menuBtn.style.display = "block";
