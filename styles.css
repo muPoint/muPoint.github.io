@@ -1,84 +1,41 @@
 /* Reset some default styles */
-body, h1, p, ul, li {
+body, ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-/* Basic styles for the entire page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
-
-/* Header styles */
+/* Style the header and navigation */
 header {
     background-color: #333;
     color: #fff;
-    padding: 15px;
-    text-align: center;
-}
-
-/* Navigation menu styles */
-nav {
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Burger menu styles */
-.burger-menu {
-    display: block;
-    cursor: pointer;
+#navbar {
+    display: none;
 }
 
-/* Icon styles */
-.icon {
+#navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navbar li {
+    margin: 10px 0;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-btn {
     font-size: 24px;
+    cursor: pointer;
+    display: none;
 }
-
-/* Navigation links styles */
-ul {
-    list-style: none;
-    /* Initially hide the navigation menu */
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Add a class to display the navigation menu */
-ul.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-li {
-    margin-right: 20px;
-}
-
-/* Content container styles */
-.container {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-    /* Remove the initial hidden styles */
-    ul {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Change the icon content when the menu is active */
-    ul.active + .burger-menu .icon::after {
-        content: '\00D7'; /* Unicode for the "times" (cross) symbol */
-    }
-
-    li {
-        margin: 10px 0;
-    }
-}
-
