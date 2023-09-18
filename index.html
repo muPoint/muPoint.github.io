@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Mobile Burger Menu</title>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="burger-menu" id="burger-menu">
-                <div class="icon" id="burger-icon">&#9776;</div>
-            </div>
-            <ul id="menu">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <nav id="navbar">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
@@ -20,12 +18,10 @@
             </ul>
         </nav>
     </header>
-
-    <div class="container">
+    <main>
         <h1>Welcome to Your Website</h1>
         <p>This is a simple responsive website template.</p>
-    </div>
-
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
