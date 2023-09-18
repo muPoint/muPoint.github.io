@@ -1,9 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const burgerMenu = document.getElementById('burger-menu');
-  const menu = document.getElementById('menu');
+function toggleMenu() {
+    var navbar = document.getElementById("navbar");
+    if (navbar.style.display === "block") {
+        navbar.style.display = "none";
+    } else {
+        navbar.style.display = "block";
+    }
+}
 
-  burgerMenu.addEventListener('click', function () {
-    menu.classList.toggle('active');
-  });
+window.addEventListener("resize", function () {
+    var menuBtn = document.querySelector(".menu-btn");
+    var navbar = document.getElementById("navbar");
+
+    if (window.innerWidth <= 768) {
+        menuBtn.style.display = "block";
+        navbar.style.display = "none";
+    } else {
+        menuBtn.style.display = "none";
+        navbar.style.display = "block";
+    }
 });
 
+// Initialize menu state based on window width
+if (window.innerWidth <= 768) {
+    var menuBtn = document.querySelector(".menu-btn");
+    var navbar = document.getElementById("navbar");
+    menuBtn.style.display = "block";
+    navbar.style.display = "none";
+}
