@@ -1,48 +1,82 @@
-/* Reset some default styles */
-body, ul {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
-/* Style the header and navigation */
 header {
-    background-color: #333;
+    background-color: #fff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Add CSS transitions for smoother animation */
-#navbar {
-    display: none;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-}
-
-.menu-active #navbar {
-    transform: translateX(0);
-}
-
-#navbar ul {
+.menu-btn {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
 }
 
-#navbar li {
+.bar {
+    background-color: #000;
+    height: 1px;
+    width: 30px;
+    transition: 0.4s;
+}
+
+.navbar {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.navbar.active {
+    display: block;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
     margin: 10px 0;
 }
 
-#navbar a {
-    color: #fff;
+.navbar a {
     text-decoration: none;
+    color: #000;
+    font-size: 18px;
 }
 
-.menu-btn {
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
+/* Add styles for the cross icon when the menu is active */
+.menu-btn.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
+
+.menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.content {
+    padding: 20px;
+}
+
