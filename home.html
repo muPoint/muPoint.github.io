@@ -4,67 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full-Screen Gallery</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+}
 
-        #gallery-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000;
-            position: relative;
-        }
+#gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+}
 
-        #gallery-wrapper {
-            display: flex;
-            flex-direction: row; /* Horizontal layout */
-            scroll-snap-type: x mandatory;
-            overflow-x: scroll;
-            width: 100%;
-            height: 100%;
-        }
+#gallery-wrapper {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Add this line to ensure it's behind the arrows */
+}
 
-        .gallery-image {
-            max-width: 100%;
-            max-height: 100vh;
-            object-fit: contain;
-            scroll-snap-align: start;
-        }
+.gallery-image {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    scroll-snap-align: start;
+}
 
-        #counter {
-            position: absolute;
-            bottom: 10px;
-            right: 1%;
-            transform: translateX(-50%);
-            color: #000;
-            font-size: 18px;
-            z-index: 1; /* Ensure the counter is above the arrows */
-        }
+#counter {
+    position: absolute;
+    bottom: 10px;
+    right: 1%;
+    transform: translateX(-50%);
+    color: #000;
+    font-size: 18px;
+    z-index: 1; /* Ensure the counter is above the arrows */
+}
 
-        #nav-arrows {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            right: 10%;
-            transform: translateY(-50%);
-            z-index: 2; /* Ensure the arrows are above the counter */
-        }
+#nav-arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure the arrows are above the counter */
+}
 
-        .arrow {
-            color: #000;
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
-</head>
+.arrow {
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+}
+    
+</style>
+    </head>
+    
 <body>
     <div id="gallery-container">
         <div id="gallery-wrapper">
@@ -78,5 +81,75 @@
             <div class="arrow" id="next-arrow">&#x2192;</div>
         </div>
     </div>
+
+    <script>
+        const images = document.querySelectorAll(".gallery-image");
+const prevArrow = document.getElementById("prev-arrow");
+const nextArrow = document.getElementById("next-arrow");
+const counter = document.getElementById("counter");
+const galleryWrapper = document.getElementById("gallery-wrapper");
+
+let currentImageIndex = 0;
+let isScrolling = false;
+
+function updateCounter() {
+    counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+}
+
+prevArrow.addEventListener("click", () => {
+    if (!isScrolling) {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateCounter();
+        showImage();
+    }
+});
+
+nextArrow.addEventListener("click", () => {
+    if (!isScrolling) {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateCounter();
+        showImage();
+    }
+});
+
+function showImage() {
+    images.forEach((image, index) => {
+        if (index === currentImageIndex) {
+            image.style.display = "block";
+        } else {
+            image.style.display = "none";
+        }
+    });
+}
+
+updateCounter();
+showImage();
+
+// Enable scrolling with mouse or trackpad
+galleryWrapper.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0 && !isScrolling) {
+        // Scroll down, show next image
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateCounter();
+        showImage();
+        disableScrollForAWhile();
+    } else if (e.deltaY < 0 && !isScrolling) {
+        // Scroll up, show previous image
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateCounter();
+        showImage();
+        disableScrollForAWhile();
+    }
+});
+
+function disableScrollForAWhile() {
+    isScrolling = true;
+    setTimeout(() => {
+        isScrolling = false;
+    }, 500); // Adjust the duration as needed
+}
+
+    </script>
 </body>
+    
 </html>
