@@ -1,87 +1,50 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
 }
 
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*MENU*/
-
-.menu-btn {
-    cursor: pointer;
+.gallery {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    margin-right: 20px;
-    padding:20px;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.bar {
-    background-color: #fff;
-    height: 1px;
-    width: 30px;
-    transition: 0.4s;
-}
-
-.navbar {
-    display: none;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
+.image-container {
     width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    z-index: 1;
+    max-width: 300px;
+    margin: 10px;
 }
 
-.navbar.active {
-    display: block;
+img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
 }
 
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar li {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #000;
+.counter {
     font-size: 18px;
+    margin: 10px 0;
 }
 
-/* Add styles for the cross icon when the menu is active */
-.menu-btn.active .bar:nth-child(1) {
-    transform: rotate(0deg) translate(-10px, 0px);
+.arrows {
+    margin: 10px;
 }
 
-.menu-btn.active .bar:nth-child(2) {
-    opacity: 0;
+.arrow-btn {
+    font-size: 24px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.menu-btn.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
-}
-
-/*CONTENT*/
-
-.content {
-    padding: 20px;
+.arrow-btn:focus {
+    outline: none;
 }
 
