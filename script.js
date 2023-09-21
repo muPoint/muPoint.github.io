@@ -1,47 +1,65 @@
-const imageContainer = document.querySelectorAll('.image-container');
-const totalImages = imageContainer.length;
-let currentIndex = 0;
+const images = document.querySelectorAll(".gallery-image");
+const prevArrow = document.getElementById("prev-arrow");
+const nextArrow = document.getElementById("next-arrow");
+const counter = document.getElementById("counter");
+const galleryWrapper = document.getElementById("gallery-wrapper");
 
-const currentImageElement = document.getElementById('current-image');
-const totalImagesElement = document.getElementById('total-images');
-const prevButton = document.getElementById('prev-btn');
-const nextButton = document.getElementById('next-btn');
+let currentImageIndex = 0;
+let isScrolling = false;
 
 function updateCounter() {
-    currentImageElement.textContent = currentIndex + 1;
+    counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
 }
 
-function showImage(index) {
-    imageContainer.forEach((container, i) => {
-        if (i === index) {
-            container.style.display = 'block';
+prevArrow.addEventListener("click", () => {
+    if (!isScrolling) {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateCounter();
+        showImage();
+    }
+});
+
+nextArrow.addEventListener("click", () => {
+    if (!isScrolling) {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateCounter();
+        showImage();
+    }
+});
+
+function showImage() {
+    images.forEach((image, index) => {
+        if (index === currentImageIndex) {
+            image.style.display = "block";
         } else {
-            container.style.display = 'none';
+            image.style.display = "none";
         }
     });
 }
 
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = totalImages - 1;
-    }
-    updateCounter();
-    showImage(currentIndex);
-});
-
-nextButton.addEventListener('click', () => {
-    if (currentIndex < totalImages - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0;
-    }
-    updateCounter();
-    showImage(currentIndex);
-});
-
-totalImagesElement.textContent = totalImages;
 updateCounter();
-showImage(currentIndex);
+showImage();
 
+// Enable scrolling with mouse or trackpad
+galleryWrapper.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0 && !isScrolling) {
+        // Scroll down, show next image
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateCounter();
+        showImage();
+        disableScrollForAWhile();
+    } else if (e.deltaY < 0 && !isScrolling) {
+        // Scroll up, show previous image
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateCounter();
+        showImage();
+        disableScrollForAWhile();
+    }
+});
+
+function disableScrollForAWhile() {
+    isScrolling = true;
+    setTimeout(() => {
+        isScrolling = false;
+    }, 500); // Adjust the duration as needed
+}
