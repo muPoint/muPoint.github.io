@@ -4,75 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full-Screen Gallery</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-
-        #gallery-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000;
-            position: relative;
-        }
-
-        #gallery-wrapper {
-            display: flex;
-            flex-direction: row; /* Horizontal layout */
-            scroll-snap-type: x mandatory;
-            overflow-x: scroll;
-            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-            width: 100%;
-            height: 100%;
-        }
-
-        .gallery-image {
-            max-width: 100%;
-            max-height: 100vh;
-            object-fit: contain;
-            scroll-snap-align: start;
-        }
-
-        #counter {
-            position: absolute;
-            bottom: 10px;
-            right: 1%;
-            transform: translateX(-50%);
-            color: #000;
-            font-size: 18px;
-            z-index: 1; /* Ensure the counter is above the arrows */
-        }
-
-        #nav-arrows {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            right: 10%;
-            transform: translateY(-50%);
-            z-index: 2; /* Ensure the arrows are above the counter */
-        }
-
-        .arrow {
-            color: #000;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 767px) {
-            /* Apply styles for screens smaller than 768px width */
-            #gallery-wrapper {
-                overflow-x: auto;
-                scroll-snap-type: none; /* Disable scroll snapping on smaller screens */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="stylesHome.css">
 </head>
 <body>
     <div id="gallery-container">
@@ -87,5 +19,7 @@
             <div class="arrow" id="next-arrow">&#x2192;</div>
         </div>
     </div>
+
+    <script src="scriptHome.js"></script>
 </body>
 </html>
