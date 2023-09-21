@@ -1,50 +1,60 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
+    overflow: hidden;
 }
 
-.gallery {
+#gallery-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
 }
 
-.image-container {
+#gallery-wrapper {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
     width: 100%;
-    max-width: 300px;
-    margin: 10px;
+    height: 100%;
+    z-index: 0; /* Add this line to ensure it's behind the arrows */
 }
 
-img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
+.gallery-image {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    scroll-snap-align: start;
 }
 
-.counter {
+#counter {
+    position: absolute;
+    bottom: 10px;
+    right: 1%;
+    transform: translateX(-50%);
+    color: #000;
     font-size: 18px;
-    margin: 10px 0;
+    z-index: 1; /* Ensure the counter is above the arrows */
 }
 
-.arrows {
-    margin: 10px;
+#nav-arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure the arrows are above the counter */
 }
 
-.arrow-btn {
+.arrow {
+    color: #000;
     font-size: 24px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
     cursor: pointer;
-    border-radius: 5px;
-}
-
-.arrow-btn:focus {
-    outline: none;
 }
 
