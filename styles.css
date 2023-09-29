@@ -3,6 +3,7 @@ body {
     margin: 5%;
     padding: 0;
     background-image: url("https://mupoint.github.io/IMG_0040.png");
+    background-size: cover;
 }
 
 body, *, .custom-cursor {
