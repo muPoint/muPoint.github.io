@@ -1,12 +1,13 @@
 /* GENERAL */
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 body, *, .custom-cursor {
+    font-family: "Courier New", Courier, monospace;
   cursor: display;
 }
 
@@ -160,42 +161,45 @@ header {
 /* Gallery container */
 .gallery-container {
     position: absolute;
+    right: calc(10% - 50px);
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 100%;
+    width: 100%; 
 }
 
 /* Gallery item */
 .gallery-item {
-    flex: 0 0 100%;
+    flex: 0 0 90%;
     scroll-snap-align: start;
     min-width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: transparent;
 }
 
 /* Images in the gallery */
 .gallery-item img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 30%;
+    max-height: 30%;
     object-fit: contain;
 }
 
 /* Navigation arrows */
 .prev-arrow,
 .next-arrow {
+    /* position: absolute; */
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 500px; /* 50% */
+    right: calc(10% - 50px);
+    transform: translate(-50%,-50%);
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
+   /* background-color: rgba(0, 0, 0, 0.5); */
+    color: #000;
+    text-align: right;
     line-height: 40px;
     cursor: pointer;
 }
@@ -229,3 +233,17 @@ header {
 .bullet.active {
     background-color: #007bff; /* Change this to your desired active color */
 }
+
+
+/* Counter */
+.counter {
+    position: absolute;
+    top: 55%;
+    right: calc(10% - 50px);
+   /* background-color: rgba(0, 0, 0, 0.5); */
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
