@@ -3,9 +3,6 @@ body {
     font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("https://mupoint.github.io/backgImage.png");
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 100%;
 }
 
@@ -21,8 +18,8 @@ header {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    right: calc(10% - 50px); /* Center horizontally */
-    top: calc(30% - 10px); /* Center vertically */
+    right: calc(10% - 60px); /* Center horizontally */
+    top: calc(35% - 10px); /* Center vertically */
 }
 
 .custom-cursor {
@@ -46,7 +43,7 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 20px;
-    margin-right: 10px;
+    margin-right: 0px;
     padding:20px;
     z-index: 999;
 }
@@ -75,7 +72,7 @@ header {
 .navbar.active {
     display: block;
     top: 0px;
-    right: 100px;
+    right: 120px;
 }
 
 .navbar ul {
@@ -92,7 +89,7 @@ header {
 .navbar a {
     text-decoration: none;
     color: #000;
-    font-size: 11px;
+    font-size: 13px;
 }
 
 /* Add styles for the cross icon when the menu is active */
@@ -114,19 +111,20 @@ header {
 /*CONTENT*/
 
 .content {
-    padding: 20px;
+    padding: 0px;
 }
 
 .pageHeader {
     position: absolute;
     top: 20px;
-    right:100px;
+    right:calc(10% - 50px);
+    z-index: 999;
 }
 
 .pageFooter {
     position: absolute;
-    right: 100px;
-    bottom: 200px;
+    right: calc(10% - 50px);
+    bottom: 35vh;
 }
 
 
@@ -141,20 +139,93 @@ header {
 
 .modelViewer-btn{
     position: relative;
-    top: 100px;
+    top: 25vh;
     }
 
 @media (max-width: 768px) {
     .modelViewer {
-        position: fixed;
+        position: absolute;
         top: 200px;
         left: 0px;
     }
     
-    .modelViewer-btn{
+    .modelViewer-btn {
         position: relative;
-        top: 300px;
         left: 0px;
+        top: 10vh;
     }
 }
     
+/* GALLERY VIEWER*/
+/* Gallery container */
+.gallery-container {
+    position: absolute;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+}
+
+/* Gallery item */
+.gallery-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Images in the gallery */
+.gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Navigation arrows */
+.prev-arrow,
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Bullets */
+.bullet-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.bullet.active {
+    background-color: #007bff; /* Change this to your desired active color */
+}
