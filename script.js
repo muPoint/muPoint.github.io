@@ -29,3 +29,53 @@ function showModel(modelId) {
     // Show the selected model
     modelViewer.style.display = 'block';
 }
+
+/* GALLERY VIEWER */
+const galleryContainer = document.querySelector('.gallery-container');
+const prevArrow = document.querySelector('.prev-arrow');
+const nextArrow = document.querySelector('.next-arrow');
+const bullets = document.querySelectorAll('.bullet');
+
+let currentIndex = 0;
+
+function updateBullets() {
+    bullets.forEach((bullet, index) => {
+        if (index === currentIndex) {
+            bullet.classList.add('active');
+        } else {
+            bullet.classList.remove('active');
+        }
+    });
+}
+
+prevArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
+        updateBullets();
+    }
+});
+
+nextArrow.addEventListener('click', () => {
+    if (currentIndex < galleryContainer.children.length - 1) {
+        currentIndex++;
+        galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
+        updateBullets();
+    }
+});
+
+bullets.forEach((bullet, index) => {
+    bullet.addEventListener('click', () => {
+        currentIndex = index;
+        galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
+        updateBullets();
+    });
+});
+
+galleryContainer.addEventListener('scroll', () => {
+    currentIndex = Math.round(galleryContainer.scrollLeft / galleryContainer.offsetWidth);
+    updateBullets();
+});
+
+// Initialize bullets
+updateBullets();
