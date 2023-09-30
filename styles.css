@@ -1,0 +1,231 @@
+/* GENERAL */
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://mupoint.github.io/backgImage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+body, *, .custom-cursor {
+  cursor: display;
+}
+
+
+header {
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: calc(10% - 15px); /* Center horizontally */
+    top: calc(50% - 10px); /* Center vertically */
+}
+
+.custom-cursor {
+           position: fixed;
+           width: 20px;
+           height: 20px;
+           border-radius: 0%;
+           background-color: rgba(100, 60, 30, 0.8); /* Default color (red with 50% opacity) */
+           pointer-events: none;
+           transform: translate(-50%, -50%);
+           mix-blend-mode: difference; /* Make cursor visible over any background */
+       }
+
+left-header{
+    position: relative;
+    right: calc(10% - 15px);
+}
+
+
+/*MENU*/
+
+.menu-btn {
+   /* cursor: pointer; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    padding:20px;
+    z-index: 999;
+}
+
+.bar {
+    background-color: #000;
+    height: 1px;
+    width: 30px;
+    transition: 0.4s;
+}
+
+.navbar {
+    display: none;
+    background-color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    transition: 0.5s;
+    z-index: 999;
+    
+}
+
+.navbar.active {
+    display: block;
+    top: 0px;
+    right: 100px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-size: 11px;
+}
+
+/* Add styles for the cross icon when the menu is active */
+.menu-btn.active .bar:nth-child(1) {
+    transform: rotate(0deg) translate(-10px, 0px);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/*CONTENT*/
+
+.content {
+    padding: 20px;
+}
+
+/* MODEL VIEWER */
+.modelViewer {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.modelViewer-btn{
+    position: relative;
+    top: 100px;
+    }
+
+@media (max-width: 768px) {
+    
+    .modelViewer {
+        position: fixed;
+        top: 1200px;
+    }
+    
+    .modelViewer-btn{
+        position: relative;
+        top: 1000px;
+    }
+}
+    
+
+/*GALLERY VIEWER*/
+
+/* Gallery container */
+.gallery-container {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Change to vertical direction */
+    overflow-x: scroll; /* Enable vertical scrolling */
+    height: 100vh;
+}
+
+/* Gallery item */
+.gallery-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-height: 100vh; /* Adjust height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Images in the gallery */
+.gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Navigation arrows */
+.prev-arrow,
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Bullets */
+.bullet-container {
+    position: absolute;
+    right: calc(10% - 15px);
+    top: calc(50% - 15px); /* Adjust positioning */
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* Change to vertical direction */
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin: 5px 0; /* Adjust margin */
+    cursor: pointer;
+}
+.bullet.active {
+    background-color: #007bff; /* Change this to your desired active color */
+}
+
+
+/* Page Titles */
+.pageTitle {
+    position: absolute;
+    right: calc(5%);
+    top: calc(10% - 15px); /* Adjust positioning */
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* Change to vertical direction */
+}
