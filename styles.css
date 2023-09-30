@@ -135,12 +135,12 @@ left-header{
     
     .modelViewer {
         position: absolute;
-        top: 70%;
+        top: 1500px;
     }
     
     .modelViewer-btn{
         position: relative;
-        top: 100px;
+        top: 1000px;
     }
 }
     
