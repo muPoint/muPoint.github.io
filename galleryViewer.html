@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <link rel="stylesheet" href="styles.css">
         <script src="script.js" defer></script>
         <title>muPoint</title>
@@ -31,34 +30,48 @@
 </header>
 
 <body>
+    
+    <div class="content">
+      <div class="custom-cursor"></div>
+      
+      <div align="right" class="pageHeader">
+          <caption>Studio ACMP</caption>
+          <h1></br>modelViewer</h1>
+          <p>Augmented Reality</p>
+          <p>3D Printing</p>
+      </div>
+    
     <div class="gallery-container">
-        <div class="pageTitle">
-            <h1> galleryViewer</h1>
-        </div>
-        
         <div class="gallery-item">
-            <img src="https://mupoint.github.io/Anim2D1.png" alt="Image 1">
+            <img src="https://mupoint.github.io/image1.png" alt="Image 1">
         </div>
-        
         <div class="gallery-item">
-            <img src="https://mupoint.github.io/Anim2D2.png" alt="Image 2">
+            <img src="https://mupoint.github.io/image2.png" alt="Image 2">
         </div>
-        
         <div class="gallery-item">
-            <img src="https://mupoint.github.io/Anim2D3.png" alt="Image 3">
+            <img src="https://mupoint.github.io/IMG_0024.jpeg" alt="Image 3">
         </div>
         <!-- Add more gallery items as needed -->
-    
-        <div class="prev-arrow">&#8593;</div>
-        <div class="next-arrow">&#8595;</div>
+    </div>
+    <div class="prev-arrow">&#9664;</div>
+    <div class="next-arrow">&#9654;</div>
+    <div class="bullet-container">
+        <div class="bullet"></div>
+        <div class="bullet"></div>
+        <div class="bullet"></div>
+        <!-- Add more bullets for additional gallery items -->
+    </div>
         
-        <div class="bullet-container">
-            <div class="bullet"></div>
-            <div class="bullet"></div>
-            <div class="bullet"></div>
+        <div align="right" class="pageFooter">
+            <caption>Copyrights ACMP</br></caption>
+            <caption>email</br></caption>
+            <caption>Instagram</br></caption>
         </div>
         
-        <div class="custom-cursor"></div>
     </div>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    
 </body>
 </html>
+
