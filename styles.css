@@ -1,8 +1,9 @@
+/* GENERAL */
 body {
     font-family: Helvetica, sans-serif;
     margin: 5%;
     padding: 0;
-    background-image: url("https://mupoint.github.io/IMG_0040.png");
+    background-image: url("https://mupoint.github.io/backgImage.png")
     background-size: cover;
 }
 
@@ -33,6 +34,10 @@ header {
            mix-blend-mode: difference; /* Make cursor visible over any background */
        }
 
+h1{
+    position: absolute;
+    right:  calc(10% - 15px);
+}
 /*MENU*/
 
 .menu-btn {
@@ -111,9 +116,7 @@ header {
 
 .model-viewer {
     position: absolute;
-    top: 500px;
-    left: 100px;
-    width: 50%;
-    height:100%;
+    top: 20%;
+    left: 50%;
 }
 
