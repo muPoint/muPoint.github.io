@@ -35,8 +35,13 @@ const galleryContainer = document.querySelector('.gallery-container');
 const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.next-arrow');
 const bullets = document.querySelectorAll('.bullet');
+const counter = document.querySelector('.counter');
 
 let currentIndex = 0;
+
+function updateCounter() {
+    counter.textContent = `${currentIndex + 1} / ${galleryContainer.children.length}`;
+}
 
 function updateBullets() {
     bullets.forEach((bullet, index) => {
@@ -52,7 +57,7 @@ prevArrow.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
         galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
-        updateBullets();
+        updateBullets(); updateCounter();
     }
 });
 
@@ -60,7 +65,7 @@ nextArrow.addEventListener('click', () => {
     if (currentIndex < galleryContainer.children.length - 1) {
         currentIndex++;
         galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
-        updateBullets();
+        updateBullets(); updateCounter();
     }
 });
 
@@ -68,14 +73,15 @@ bullets.forEach((bullet, index) => {
     bullet.addEventListener('click', () => {
         currentIndex = index;
         galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
-        updateBullets();
+        updateBullets(); updateCounter();
     });
 });
 
 galleryContainer.addEventListener('scroll', () => {
     currentIndex = Math.round(galleryContainer.scrollLeft / galleryContainer.offsetWidth);
-    updateBullets();
+    updateBullets(); updateCounter();
 });
 
 // Initialize bullets
 updateBullets();
+updateCounter();
