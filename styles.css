@@ -3,7 +3,7 @@ body {
     font-family: Helvetica, sans-serif;
     margin: 5%;
     padding: 0;
-    background-image: url("https://mupoint.github.io/backgImage.png")
+    background-image: url("https://mupoint.github.io/backgImage.png");
     background-size: cover;
 }
 
@@ -34,10 +34,12 @@ header {
            mix-blend-mode: difference; /* Make cursor visible over any background */
        }
 
-h1{
+left-header{
     position: absolute;
-    right:  calc(10% - 15px);
+    right: calc(10% - 15px);
 }
+
+
 /*MENU*/
 
 .menu-btn {
@@ -114,9 +116,36 @@ h1{
     padding: 20px;
 }
 
-.model-viewer {
+/* MODEL VIEWER */
+.modelViewer {
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 40%;
 }
 
+.modelViewer-btn{
+    position: relative;
+    top: 200px;
+    }
+
+/* Style the AR buttons */
+model-viewer::part(ar-button) {
+  background-color: #0078d4; /* Change the background color */
+  color: #fff; /* Change the text color */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+/* Style the AR hand button */
+model-viewer::part(ar-hand) {
+  background-color: #f00; /* Change the background color */
+  color: #fff; /* Change the text color */
+  border: none;
+  border-radius: 50%; /* Make it round */
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  font-size: 20px;
+  line-height: 40px; /* Vertically center the text */
+}
