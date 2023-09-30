@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-image: url("https://mupoint.github.io/backgImage.png");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body, *, .custom-cursor {
