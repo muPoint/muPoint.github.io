@@ -131,6 +131,20 @@ left-header{
     top: 100px;
     }
 
+@media (max-width: 768px) {
+    
+    .modelViewer {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+    
+    .modelViewer-btn{
+        position: relative;
+        top: 100px;
+    }
+}
+    
 
 /*GALLERY VIEWER*/
 
