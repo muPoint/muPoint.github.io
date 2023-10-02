@@ -21,13 +21,13 @@ header {
     justify-content: space-between;
     align-items: right;
     position: absolute;
-    right: 5vw;
-    top: 50vh;
+    right: 3vw;
+    top: 65vh;
     z-index: 999;
 }
 
 footer{
-    display: none;
+    display: none;    
 }
 
 .custom-cursor {
@@ -180,11 +180,11 @@ button:active {
 /* Gallery container */
 .gallery-container {
     position: absolute;
-    right: 0vw;
+    right: 15vw;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 100%; 
+    width: 80%;
 }
 
 /* Gallery item */
@@ -204,39 +204,37 @@ button:active {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
-    2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Navigation arrows */
 .prev-arrow,
 .next-arrow {
-    /* position: absolute; */
     position: absolute;
-    top: 50vh; /* 50% */
-    right: 5vw;
-    transform: translate(-5%,-5%);
+    top: 50vh;
     width: 40px;
     height: 40px;
    /* background-color: rgba(0, 0, 0, 0.5); */
     color: #000;
-    text-align: right;
-    line-height: 40px;
+    align-items: center;
+    line-height: 30px;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .prev-arrow {
-    left: 20px;
+    right: 9vw;
+    
 }
 
 .next-arrow {
-    right: 20px;
+    right: 1vw;
 }
 
 /* Counter */
 .counter {
     position: absolute;
-    top: 60vh;
+    top: 50vh;
     right: 5vw;
    /* background-color: rgba(0, 0, 0, 0.5); */
     color: #000;
@@ -268,32 +266,7 @@ button:active {
     background-color: #007bff; /* Change this to your desired active color */
 }
 
-/* MOBILE VERSION */
-@media (max-width: 768px) {
-    body {
-        background-size: auto 100%; /* Crop width on small screens */
-    }
-    
-    .pageHeader {
-        top: 2vh;
-    }
-    
-    .modelViewer {
-        position: absolute;
-        top: 200px;
-        left: 0px;
-    }
-        
-    .modelViewer-btn {
-        position: relative;
-        left: 0px;
-        top: 10vh;
-    }
-}
-
 /* INFO */
-
-
 .caption {
     display: none;
 }
@@ -320,3 +293,31 @@ button:active {
 }
 
 
+
+/* MOBILE VERSION */
+@media (max-width: 768px) {
+    body {
+        background-size: auto 100%; /* Crop width on small screens */
+    }
+    
+    .pageHeader {
+        top: 2vh;
+    }
+    
+    .modelViewer {
+        position: absolute;
+        top: 200px;
+        left: 0px;
+    }
+        
+    .modelViewer-btn {
+        position: relative;
+        left: 0px;
+        top: 10vh;
+    }
+    
+    .prev-arrow,
+    .next-arrow {
+        display: none;
+    }
+}
