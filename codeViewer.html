@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>muPoint</title>
+            
+</head>
+
+<style>
+    /* Gallery container */
+    .gallery-container {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Change to vertical direction */
+        overflow-y: scroll; /* Enable vertical scrolling */
+        height: 100vh;
+    }
+
+    /* Gallery item */
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        min-height: 100vh; /* Adjust height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+
+    /* Images in the gallery */
+    .gallery-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
+    .custom-video {
+        height: 100%;
+    }
+
+</style>
+
+<header>
+    <h2>muPoint</h2>
+    
+    <div class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/Users/mupoint/Documents/XCode/website/modelViewer.html">modelViewer</a></li>
+            <li><a href="/Users/mupoint/Documents/XCode/website/galleryViewer.html">galleryViewer</a></li>
+            <li><a href="/Users/mupoint/Documents/XCode/website/codeViewer.html">codeViewer</a></li>
+            <li><a href="/Users/mupoint/Documents/XCode/website/galleries/vertPlusCounter.html">Vertical Gallery (Counter)</a></li>
+            <li><a href="/Users/mupoint/Documents/XCode/website/galleries/captions.html">Captions</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    
+<div class="content">
+      <div class="custom-cursor"></div>
+      
+      <div align="right" class="pageHeader">
+          <caption>© Studio ACMP</caption>
+          <h1></br>codeViewer</h1>
+          <p>Drawing</p>
+          <p>with code</p>
+      </div>
+   
+   <div class="gallery-container">
+       <div class="gallery-item">
+           <video
+               class="custom-video"
+               controlsList="nodownload"
+               controlsList="nofullscreen"
+               poster="video1-poster.jpg"
+               preload="metadata"
+               autoplay
+               x-webkit-airplay="deny">
+               <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D3.mov" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+       <div class="gallery-item">
+           <video class="custom-video"
+               controlsList="nodownload"
+               controlsList="nofullscreen"
+               poster="video1-poster.jpg"
+               preload="metadata"
+               autoplay
+               x-webkit-airplay="deny">
+               <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D2.mov" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+       <div class="gallery-item">
+           <video class="custom-video"
+               controlsList="nodownload"
+               controlsList="nofullscreen"
+               poster="video1-poster.jpg"
+               preload="metadata"
+               autoplay
+               x-webkit-airplay="deny">
+               <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D4.mov" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+       <!-- Add more gallery items as needed -->
+   </div>
+   
+   <div class="prev-arrow">⌃</div>
+   <div class="next-arrow">⌄</div>
+   
+   <div class="bullet-container">
+       <div class="bullet"></div>
+       <div class="bullet"></div>
+       <div class="bullet"></div>
+       <!-- Add more bullets for additional gallery items -->
+   </div>
+
+   
+    <div align="right" class="pageFooter">
+           <p>email</br></p>
+           <p>⇲</p>
+    </div>
+       
+</div>
+
+<script>
+    const galleryContainer = document.querySelector('.gallery-container');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    const bullets = document.querySelectorAll('.bullet');
+
+    let currentIndex = 0;
+
+    function updateBullets() {
+        bullets.forEach((bullet, index) => {
+            if (index === currentIndex) {
+                bullet.classList.add('active');
+            } else {
+                bullet.classList.remove('active');
+            }
+        });
+    }
+
+    prevArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+            updateBullets();
+        }
+    });
+
+    nextArrow.addEventListener('click', () => {
+        if (currentIndex < galleryContainer.children.length - 1) {
+            currentIndex++;
+            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+            updateBullets();
+        }
+    });
+
+    bullets.forEach((bullet, index) => {
+        bullet.addEventListener('click', () => {
+            currentIndex = index;
+            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+            updateBullets();
+        });
+    });
+
+    galleryContainer.addEventListener('scroll', () => {
+        currentIndex = Math.round(galleryContainer.scrollTop / galleryContainer.clientHeight);
+        updateBullets();
+    });
+
+    // Initialize bullets
+    updateBullets();
+    
+    /* MENU */
+    const menuBtn = document.querySelector('.menu-btn');
+    const navbar = document.querySelector('.navbar');
+
+    menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        navbar.classList.toggle('active');
+    });
+    
+    /* CURSOR */
+    const customCursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        // Update the cursor's position
+        customCursor.style.left = `${e.clientX}px`;
+        customCursor.style.top = `${e.clientY}px`;
+    });
+    
+    
+</script>
+
+</body>
+
+
+</html>
+
+
+
