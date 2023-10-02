@@ -26,9 +26,6 @@ header {
     z-index: 999;
 }
 
-footer{
-    display: none;    
-}
 
 .custom-cursor {
     position: fixed;
@@ -184,7 +181,7 @@ button:active {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 80%;
+    width: 100%;
 }
 
 /* Gallery item */
