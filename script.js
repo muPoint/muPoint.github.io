@@ -85,3 +85,24 @@ galleryContainer.addEventListener('scroll', () => {
 // Initialize bullets
 updateBullets();
 updateCounter();
+
+/* caption */
+const captionButtons = document.querySelectorAll('.caption-button');
+const closeCaptionButtons = document.querySelectorAll('.close-caption-button');
+const captions = document.querySelectorAll('.caption');
+
+captionButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        captions[index].classList.toggle('show-caption');
+        button.style.display = 'none'; // Hide the "+" button
+    });
+});
+
+closeCaptionButtons.forEach((closeButton, index) => {
+    closeButton.addEventListener('click', () => {
+        captions[index].classList.remove('show-caption');
+        captionButtons[index].style.display = 'block'; // Show the "+" button when closing the caption
+    });
+});
+
+
