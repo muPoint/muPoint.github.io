@@ -44,7 +44,6 @@ footer{
     right: 5vh;
 }
 
-
 /*MENU*/
 
 .menu-btn {
@@ -71,11 +70,11 @@ footer{
     display: none;
     background-color: #fff;
     opacity: 0.8;
-    position: absolute;
-    top: 60px;
+    position: flex;
+    top: 0px;
     right: 0;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     transition: 0.5s;
     z-index: 999;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -127,19 +126,12 @@ footer{
     padding: 0px;
 }
 
-.pageHeader {
+.title1 {
     position: absolute;
     right: 5vw;
     top: 15vh;
     z-index: 999;
 }
-
-.pageFooter {
-    position: absolute;
-    right: 5vw;
-    bottom: 10vh;
-}
-
 
 h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -179,7 +171,7 @@ button:active {
     background-color: #003b80; /* Change the background color on click */
 }
 
-/* GALLERY VIEWER*/
+/* GALLERY VIEWER HORIZONTAL */
 /* Gallery container */
 .gallery-container {
     position: absolute;
@@ -187,12 +179,12 @@ button:active {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 100%;
+    width: 100vw;
 }
 
 /* Gallery item */
 .gallery-item {
-    flex: 0 0 90%;
+    flex: 0 0 100%;
     scroll-snap-align: start;
     min-width: 100%;
     height: 100vh;
@@ -234,41 +226,6 @@ button:active {
     right: 1vw;
 }
 
-/* Counter */
-.counter {
-    position: absolute;
-    top: 50vh;
-    right: 5vw;
-   /* background-color: rgba(0, 0, 0, 0.5); */
-    color: #000;
-    padding: 5px 10px;
-    border: 1px solid black;
-}
-
-
-/* Bullets */
-.bullet-container {
-    position: absolute;
-    top: 60vh; /* Adjust positioning */
-    right: 5vw;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column; /* Change to vertical direction */
-}
-
-.bullet {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid black;
-    border-radius: 0%;
-    margin: 5px 0; /* Adjust margin */
-    cursor: pointer;
-}
-.bullet.active {
-    background-color: #007bff; /* Change this to your desired active color */
-}
-
 /* INFO */
 .caption {
     display: none;
@@ -295,10 +252,46 @@ button:active {
     color: black;
 }
 
+/* Counter */
+.counter {
+    position: absolute;
+    top: 50vh;
+    right: 5vw;
+   /* background-color: rgba(0, 0, 0, 0.5); */
+    color: #000;
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+
+/* GALLERY VIEWER VERTICAL
+    See page */
+
+/* Bullets */
+.bullet-container {
+    position: absolute;
+    top: 50vh; /* Adjust positioning */
+    right: 5vw;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* Change to vertical direction */
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+    border-radius: 0%;
+    margin: 5px 0; /* Adjust margin */
+    cursor: pointer;
+}
+.bullet.active {
+    background-color: #007bff; /* Change this to your desired active color */
+}
 
 
 /* MOBILE VERSION */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     body {
         background-size: auto 100%; /* Crop width on small screens */
     }
