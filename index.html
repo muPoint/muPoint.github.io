@@ -16,8 +16,6 @@
 </style>
 
 <header>
-    <h2>muPoint</h2>
-    
     <div class="menu-btn">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -30,6 +28,8 @@
             <li><a href="https://mupoint.github.io/codeViewer.html">codeViewer</a></li>
         </ul>
     </nav>
+    
+    <h2>muPoint</h2>
 </header>
 
 <body>
@@ -56,8 +56,9 @@
               ios-src="https://mupoint.github.io/Untitled.usdz"
               ar-scale="auto"
               ar-placement="floor"
-              style="width: 100%; height: 500px; display: block;"
-          ></model-viewer>
+              style="width: 100%; height: 100vh; "
+              skybox-image="https://mupoint.github.io/image2.png">
+          </model-viewer>
 
           <model-viewer
               id="model2"
@@ -70,8 +71,9 @@
               ar-scale="auto"
               ar-placement="floor"
               alt="Model 2"
-              style="width: 100%; height: 500px; display: none;"
-          ></model-viewer>
+              style="width: 100%; height: 100vh; display: none;"
+              skybox-image="https://mupoint.github.io/Anim2D4.png">
+          </model-viewer>
 
           <model-viewer
               id="model3"
@@ -84,19 +86,24 @@
               ios-src="https://mupoint.github.io/camera.usdz"
               ar-scale="auto"
               ar-placement="floor"
-              style="width: 100%; height: 500px; display: none;"
-          ></model-viewer>
+              style="width: 100%; height: 100vh; display: none;"
+              skybox-image="https://mupoint.github.io/Anim2D1.png">
+          </model-viewer>
         
           <!--Buttons-->
-          <button onclick="showModel('model1')"><img src="https://mupoint.github.io/thumb1.png"
-              class="thumb">
-          </img></button>
-          <button class="thumb" onclick="showModel('model2')"><img src="https://mupoint.github.io/thumb2.png"
-              class="thumb">
-          </img></button>
-          <button class="thumb" onclick="showModel('model3')"><img src="https://mupoint.github.io/thumb3.png"
-              class="thumb">
-          </img></button>
+          <div class="thumb-container">
+              <button onclick="showModel('model1')">
+                  <img src="https://mupoint.github.io/thumb1.png"
+                      class="thumb"></img>
+              </button>
+              <button class="thumb" onclick="showModel('model2')">
+                  <img src="https://mupoint.github.io/thumb2.png"
+                      class="thumb"></img>
+              </button>
+              <button class="thumb" onclick="showModel('model3')"><img src="https://mupoint.github.io/thumb3.png"
+                  class="thumb"></img>
+              </button>
+          </div>
         </div>
         
     </div>
