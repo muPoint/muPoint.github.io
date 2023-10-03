@@ -86,7 +86,8 @@ galleryContainer.addEventListener('scroll', () => {
 updateBullets();
 updateCounter();
 
-/* caption */
+
+/*captions*/
 const captionButtons = document.querySelectorAll('.caption-button');
 const closeCaptionButtons = document.querySelectorAll('.close-caption-button');
 const captions = document.querySelectorAll('.caption');
@@ -104,5 +105,3 @@ closeCaptionButtons.forEach((closeButton, index) => {
         captionButtons[index].style.display = 'block'; // Show the "+" button when closing the caption
     });
 });
-
-
