@@ -56,7 +56,6 @@ footer{
     margin-right: 0px;
     padding:20px;
     z-index: 999;
-    
 }
 
 .bar {
@@ -103,7 +102,6 @@ footer{
     color: #000;
     font-size: 11px;
 }
-
 /* Add styles for the cross icon when the menu is active */
 .menu-btn.active .bar:nth-child(1) {
     transform: rotate(0deg) translate(-10px, 0px);
@@ -137,48 +135,65 @@ h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-/* MODEL VIEWER */
-.modelViewer {
-    position: absolute;
-    top: 20%;
-    left: 40%;
-}
-
-.thumb {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
 /* Style the button */
 button {
-    background-color: transparent /* Background color */
-    color: #fff; /* Text color */
-    padding: 0px 0px; /* Padding inside the button */
-    border: none; /* Remove the default button border */
-    box-shadow: 2px 2px 4px black;
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    background-color: white;
+    color: #000;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 2px black;
+    border-radius: 0px;
+    font-size: 16px;
     cursor: pointer; /* Add a pointer cursor on hover */
 }
 
 /* Style the button on hover */
 button:hover {
-    background-color: #0056b3; /* Change the background color on hover */
+    background-color: #007bff;
 }
 
 /* Style the button on click */
 button:active {
-    background-color: #003b80; /* Change the background color on click */
+    /* Change the background color on click */
 }
+
+
+/* MODEL VIEWER */
+.modelViewer {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align buttons to the right side */
+    align-items: flex-start; /* Align buttons to the top */
+}
+
+.thumb-container {
+    position: absolute;
+    top: 40vh; /* Adjust the top position as needed */
+    right: 5vw; /* Adjust the right position as needed */
+    display: flex;
+    flex-direction: column; /* Arrange buttons in a column */
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    z-index: 999; /* Ensure the buttons appear above other content */
+    /* Add your button container styles here, e.g., background color, padding, etc. */
+}
+
+.thumb {
+    top: 30vh;
+    right: 5vw;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    padding: 0px;
+}
+
 
 /* GALLERY VIEWER HORIZONTAL */
 /* Gallery container */
 .gallery-container {
-    position: absolute;
-    right: 15vw;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -187,20 +202,18 @@ button:active {
 
 /* Gallery item */
 .gallery-item {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
+    position: relative;
     min-width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align buttons to the right side */
+    align-items: flex-start; /* Align buttons to the top */
 }
 
 /* Images in the gallery */
 .gallery-item img {
-    max-width: 80%;
-    max-height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -236,24 +249,36 @@ button:active {
 
 .show-caption {
     display: block;
-    margin: 30px;
-}
-
-.caption-button-container {
-    display: flex;
-    align-items: center;
+    margin: 200px;
 }
 
 .caption-button {
-    margin: 15px; /* Add some spacing between the buttons if desired */
+    position: absolute;
+    bottom: 20vh;
+    right: 40vh;
     font-size: 26px; /* Adjust the font size as needed */
     line-height: 20px; /* Adjust the line height as needed */
-    vertical-align: middle;
     background: transparent;
-    border-radius: 0px;
     border-bottom: 1px solid black;
     color: black;
+    z-index: 999;
 }
+
+
+.caption-button-container {
+    position: absolute;
+    top: 50px;
+    right: 10vw;
+    background-color: gray;
+    padding: 50px;
+    flex-direction: column; /* Arrange buttons in a column */
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    z-index: 999;
+    display: flex;
+    align-items: left;
+    box-shadow: 1px 1px 2px;
+}
+
 
 /* Counter */
 .counter {
@@ -265,9 +290,6 @@ button:active {
     padding: 5px 10px;
     border: 1px solid black;
 }
-
-/* GALLERY VIEWER VERTICAL
-    See page */
 
 /* Bullets */
 .bullet-container {
@@ -308,14 +330,16 @@ button:active {
     
     .modelViewer {
         position: absolute;
-        top: 100px;
-        left: 0px;
+        top: 20%;
+        left: 40%;
+      
     }
-        
-    .modelViewer-btn {
-        position: relative;
-        left: 0px;
-        top: 10vh;
+    
+    .thumb-container {
+        background-color: white;
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
     }
     
     .prev-arrow,
