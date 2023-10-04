@@ -113,7 +113,27 @@
 </body>
 
 <footer>
-    <p>email</br></p>
+    <button onclick="openPopup()">email</button>
+
+    <div id="overlay" class="popup-overlay"></div>
+
+    <div id="popup" class="popup-content" style="display: none;">
+        <h2>Contact Us</h2>
+        <form action="send_email.php" method="post">
+            <label class="form-label" for="name">Name:</label>
+            <input class="form-input" type="text" id="name" name="name" required><br>
+
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-input" type="email" id="email" name="email" required><br>
+
+            <label class="form-label" for="message">Message:</label>
+            <textarea class="form-input" id="message" name="message" required></textarea><br>
+
+            <input type="submit" value="Send Email">
+            <button type="button" onclick="closePopup()">X</button>
+        </form>
+    </div>
+        
      <p>⇲</p>
 </footer>
 
