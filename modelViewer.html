@@ -13,11 +13,11 @@
 </head>
 <body>
     <header>
-        <div align="right">
+        <div align="">
             <h3>© muPoint</h3>
             </br></br>
             <h1>galleryViewer </h1>
-            <h2>drawing </br> with code</h2>
+            <h2>drawing with code</h2>
         </div>
     </header>
 
@@ -109,11 +109,22 @@
     </section>
       
 <footer>
-    <p>email</p>
-    <p>⇲</p>
+    <p>email⇲</p>
 </footer>
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js">
+</script>
+
+<script>
+function showModel(modelId) {
+    const modelViewer = document.querySelector(`#${modelId}`);
+    // Hide all models first
+    document.querySelectorAll('model-viewer').forEach(model => {
+        model.style.display = 'none';
+    });
+    // Show the selected model
+    modelViewer.style.display = 'block';
+}
 </script>
     
     
