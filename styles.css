@@ -10,10 +10,12 @@ body {
 }
 header {
     position: absolute;
+    align-items: top;
     display: flex;
-    top: 10vh;
+    top: 15vh;
     right: 5vw;
     margin: 0px;
+    transform: rotate(90deg);
     z-index: 4;
 }
 
@@ -31,24 +33,23 @@ footer {
 
 .hamburger {
   position: absolute;
-  bottom: 5vh;
+  top: 5vh;
   right: 5vh;
   width: 1.5em;
-  height: 25px;
+  height: 30px;
   background-color: white;
   border-radius: 2px;
   padding-top: 2px;
   padding-left: 8px;
   padding-right: 8px;
   border: 0.2px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 
 .hamburger div {
   position: relative;
   width: 1.5em;
-  height: 1px;
+  height: 0.2em;
   border-radius: 0px;
   background-color: #000;
   margin-top: 5px;
@@ -64,7 +65,7 @@ footer {
   top: 0; left: 0; right: 0; bottom: 0;
   overflow: hidden;
   text-align: left;
-  padding-left: 100vh;
+  padding-left: 0px;
   transition: all 0.3s ease-in-out;
   transform: scale(0);
   z-index: 5;
@@ -108,13 +109,13 @@ nav a:hover:before {
 /* Menu Animations */
 
 #toggle:checked + .hamburger .top-line {
-  transform: rotate(-45deg);
-  margin-top: 11px;
+  transform: rotate(-40deg);
+  margin-top: 10px;
 }
 
 #toggle:checked + .hamburger .middle-line {
-  transform: rotate(45deg);
-  margin-top: 0px;
+  transform: rotate(40deg);
+  margin-top: -2px;
 }
 
 #toggle:checked + .hamburger .bottom-line {
@@ -133,12 +134,12 @@ nav a:hover:before {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
 }
 
 /* Gallery item */
 .gallery-item {
-    flex: 0 0 100%;
+    flex: 0 0 80%;
     scroll-snap-align: start;
     min-width: 100%;
     height: 100vh;
@@ -151,24 +152,27 @@ nav a:hover:before {
 .gallery-item img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Navigation arrows */
-.prev-arrow,
-.next-arrow {
-    position: absolute;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font: 12px;
-}
 
 .prev-arrow {
+    position: absolute;
+/*    transform: translateY(-50%);*/
+    cursor: pointer;
+    font: 12px;
     right: 5.5vh;
     top: 46vh;
+    width: 30px;
 }
 
 .next-arrow {
+    width: 30px;
+    position: absolute;
+   /* transform: translateY(-50%); */
+    cursor: pointer;
+    font: 12px;
     right: 5.5vh;
     top: 54vh;
     
@@ -176,9 +180,11 @@ nav a:hover:before {
 
 /* Counter */
 .counter {
+    width: 50px;
     position: absolute;
     top: 49vh;
     right: 5vh;
+    
 }
 
 /* Bullets */
@@ -205,7 +211,7 @@ nav a:hover:before {
 }
 
 
-/* MODEL VIEWER */
+/* MODEL VIEWER*/
 .modelViewer {
     position: relative;
     width: 100%;
@@ -217,7 +223,40 @@ nav a:hover:before {
 
 .thumb-container {
     position: absolute;
-    bottom: 10vh; /* Adjust the top position as needed */
+    top: 5document.addEventListener('DOMContentLoaded', () => {
+        const galleryContainer = document.querySelector('.gallery-container');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        const counter = document.querySelector('.counter');
+
+        let currentIndex = 0;
+
+        function updateCounter() {
+            counter.textContent = `${currentIndex + 1} / ${galleryContainer.children.length}`;
+        }
+
+        prevArrow.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
+                updateCounter();
+            }
+        });
+
+        nextArrow.addEventListener('click', () => {
+            if (currentIndex < galleryContainer.children.length - 1) {
+                currentIndex++;
+                galleryContainer.scrollTo({ left: currentIndex * galleryContainer.offsetWidth, behavior: 'smooth' });
+                updateCounter();
+            }
+        });
+
+        galleryContainer.addEventListener('scroll', () => {
+            currentIndex = Math.round(galleryContainer.scrollLeft / galleryContainer.offsetWidth);
+            updateCounter();
+        });
+    });
+0vh; /* Adjust the top position as needed */
     right: 5vw; /* Adjust the right position as needed */
     display: flex;
     flex-direction: column; /* Arrange buttons in a column */
