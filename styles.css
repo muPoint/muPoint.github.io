@@ -31,12 +31,12 @@ footer {
 
 .hamburger {
   position: absolute;
-  top: 50vh;
+  top: 30vh;
   right: 7%;
   width: 1.5em;
   height: 25px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 2px;
   padding-top: 2px;
   padding-left: 8px;
   padding-right: 8px;
