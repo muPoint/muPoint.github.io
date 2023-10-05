@@ -1,303 +1,217 @@
-/* GENERAL */
-body {
-    font-family: monospace;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top; /* Center the image vertically */
-    min-height: 100vh; /* Ensure the background covers the full height */
 }
 
-body, *, .custom-cursor {
-    cursor: display;
+body {
+    font-family: monospace, sans-serif;
+    font-size: 11px;
 }
-
-
 header {
-    color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
     position: absolute;
-    right: 3vw;
-    top: 65vh;
-    z-index: 999;
+    display: flex;
+    top: 10vh;
+    right: 5vw;
+    margin: 0px;
+    z-index: 4;
 }
 
-
-.custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 0%;
-    background-color: #007bff;; /*  Default color (red with 50% opacity) */
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: multiply; /* Make cursor visible over any background */
-    z-index: 999;
-}
-
-footer{
+footer {
     position: absolute;
     bottom: 10px;
     right: 5vh;
 }
 
-/*MENU*/
+/* Menu */
 
-.menu-btn {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    margin-right: 0px;
-    padding:20px;
-    z-index: 999;
+#toggle {
+  display: none;
 }
 
-.bar {
-    background-color: #000;
-    height: 1px;
-    width: 30px;
-    transition: 0.4s;
+.hamburger {
+  position: absolute;
+  top: 50vh;
+  right: 7%;
+  width: 1.5em;
+  height: 25px;
+  background-color: white;
+  border-radius: 8px;
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 0.2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
-.navbar {
-    display: none;
-    background-color: #fff;
-    opacity: 0.8;
-    position: absolute;
-    top: 0px;
-    right: 5vh;
-    width: 150px;
-    height: 200px;
-    transition: 0.5s;
-    z-index: 999;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    
+.hamburger div {
+  position: relative;
+  width: 1.5em;
+  height: 1px;
+  border-radius: 0px;
+  background-color: #000;
+  margin-top: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
-.navbar.active {
-    display: block;
-    top: -200px;
-    right: 5vh;
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.8;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  text-align: left;
+  margin-left: 75%;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  z-index: 5;
 }
 
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nav-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+  margin-top: 15%;
+  margin-left: 5%;
 }
 
-.navbar li {
-    margin: 30px 0;
-    padding-left: 30px;
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  display: inline-block;
+  margin-top: 4.5em;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 1px;
+}
+nav a:before {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0.25em;
+  background-color: white;
+  left: -0.5em;
+  transition: all 0.2s ease-in-out;
+}
+nav a:hover {
+  color: white;
+}
+nav a:hover:before {
+  height: 100%;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #000;
-    font-size: 11px;
-}
-/* Add styles for the cross icon when the menu is active */
-.menu-btn.active .bar:nth-child(1) {
-    transform: rotate(0deg) translate(-10px, 0px);
+/* Menu Animations */
+
+#toggle:checked + .hamburger .top-line {
+  transform: rotate(-45deg);
+  margin-top: 11px;
 }
 
-.menu-btn.active .bar:nth-child(2) {
+#toggle:checked + .hamburger .middle-line {
+  transform: rotate(45deg);
+  margin-top: 0px;
+}
+
+#toggle:checked + .hamburger .bottom-line {
     opacity: 0;
+  transform: rotate(45deg);
 }
 
-.menu-btn.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
 }
-
-
-
-
-/*CONTENT*/
-
-.content {
-    padding: 0px;
-}
-
-.heading {
-    position: absolute;
-    right: 5vw;
-    top: 15vh;
-    z-index: 999;
-}
-
-h2 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Style the button */
-button {
-    background-color: white;
-    color: #000;
-    padding: 10px;
-    border: none;
-    box-shadow: 1px 1px 2px black;
-    border-radius: 0px;
-    font-size: 16px;
-    cursor: pointer; /* Add a pointer cursor on hover */
-}
-
-/* Style the button on hover */
-button:hover {
-    background-color: #007bff;
-}
-
-/* Style the button on click */
-button:active {
-    /* Change the background color on click */
-}
-
-
-/* MODEL VIEWER */
-.modelViewer {
-    position: relative;
-    top: 0px;
-    width: 100%;
-    height: 100vh;
-    display: flex; /* Use flexbox for layout */
-    justify-content: flex-end; /* Align buttons to the right side */
-    align-items: flex-start; /* Align buttons to the top */
-}
-
-.thumb-container {
-    position: absolute;
-    top: 40vh; /* Adjust the top position as needed */
-    right: 5vw; /* Adjust the right position as needed */
-    display: flex;
-    flex-direction: column; /* Arrange buttons in a column */
-    gap: 10px; /* Adjust the gap between buttons as needed */
-    z-index: 999; /* Ensure the buttons appear above other content */
-    /* Add your button container styles here, e.g., background color, padding, etc. */
-}
-
-.thumb {
-    top: 30vh;
-    right: 5vw;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    padding: 0px;
-}
-
-
-/* GALLERY VIEWER HORIZONTAL */
 /* Gallery container */
 .gallery-container {
+    position: relative;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     width: 100vw;
+    height: 100vh;
 }
 
 /* Gallery item */
 .gallery-item {
-    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     min-width: 100%;
     height: 100vh;
-    display: flex; /* Use flexbox for layout */
-    justify-content: flex-end; /* Align buttons to the right side */
-    align-items: flex-start; /* Align buttons to the top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Images in the gallery */
 .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
 /* Navigation arrows */
 .prev-arrow,
 .next-arrow {
     position: absolute;
-    top: 50vh;
-    width: 40px;
-    height: 40px;
-   /* background-color: rgba(0, 0, 0, 0.5); */
-    color: #000;
-    align-items: center;
-    line-height: 30px;
+    transform: translateY(-50%);
     cursor: pointer;
-    font-size: 24px;
 }
 
 .prev-arrow {
-    right: 9vw;
-    
+    right: 5.5vh;
+    top: 48.5vh;
 }
 
 .next-arrow {
-    right: 1vw;
+    right: 5.5vh;
+    top: 53vh;
+    
 }
-
-/* INFO */
-.caption {
-    display: none;
-}
-
-.show-caption {
-    display: block;
-    margin: 200px;
-}
-
-.caption-button {
-    position: absolute;
-    bottom: 20vh;
-    right: 40vh;
-    font-size: 26px; /* Adjust the font size as needed */
-    line-height: 20px; /* Adjust the line height as needed */
-    background: blue;
-    border-bottom: 1px solid black;
-    color: black;
-    z-index: 999;
-}
-
-
-.caption-button-container {
-    position: absolute;
-    top: 50px;
-    right: 10vw;
-    background-color: gray;
-    padding: 50px;
-    flex-direction: column; /* Arrange buttons in a column */
-    gap: 10px; /* Adjust the gap between buttons as needed */
-    z-index: 999;
-    display: flex;
-    align-items: left;
-    box-shadow: 1px 1px 2px;
-}
-
 
 /* Counter */
 .counter {
     position: absolute;
     top: 50vh;
-    right: 5vw;
-   /* background-color: rgba(0, 0, 0, 0.5); */
-    color: #000;
-    padding: 5px 10px;
-    border: 1px solid black;
+    right: 5vh;
 }
+
+/* CSS styles for captions */
+.caption {
+    display: visible;
+    margin-top: 10px;
+    z-index: 999;/* Adjust as needed for spacing */
+}
+
+/* CSS styles for caption toggle buttons */
+.caption-toggle {
+    display: visible;
+    z-index: 999;
+    
+}
+
+.caption-toggle + .caption-toggle-label {
+    cursor: pointer;
+    color: blue;
+    z-index: 999;/* Change the color as desired */
+}
+
+.caption-toggle:checked + .caption-toggle-label + .caption {
+    display: block;
+    z-index: 999;
+}
+
 
 /* Bullets */
 .bullet-container {
     position: absolute;
     top: 50vh; /* Adjust positioning */
     right: 5vw;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column; /* Change to vertical direction */
 }
@@ -315,70 +229,87 @@ button:active {
     background-color: #007bff; /* Change this to your desired active color */
 }
 
-/* EMAIL*/
-/* Style for the popup overlay */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
 
-.popup-content {
+/* MODEL VIEWER */
+.modelViewer {
     position: relative;
-    top: 50%;
-    right: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 80px;
-    z-index: 1000;
-}
-
-/* Style for form fields */
-.form-label {
-    display: block;
-    margin-bottom: 10px; /* Adjust the margin as needed */
-}
-
-.form-input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px; /* Adjust the margin as needed */
+    height: 100vh;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align buttons to the right side */
+    align-items: flex-start; /* Align buttons to the top */
 }
 
-/* MOBILE VERSION */
-@media (max-width: 1024px) {
-    body {
-        background-size: auto 100%; /* Crop width on small screens */
-    }
-    
-    .heading {
-        position: absolute;
-        right: 5vw;
-        top: 5vh;
-        z-index: 999;
-    }
-    
-    .modelViewer {
-        position: absolute;
-        top: 20%;
-        left: 40%;
-      
-    }
-    
-    .thumb-container {
-        background-color: white;
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-    }
-    
-    .prev-arrow,
-    .next-arrow {
-        display: none;
-    }
+.thumb-container {
+    position: absolute;
+    bottom: 10vh; /* Adjust the top position as needed */
+    right: 5vw; /* Adjust the right position as needed */
+    display: flex;
+    flex-direction: column; /* Arrange buttons in a column */
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    z-index: 999; /* Ensure the buttons appear above other content */
+    /* Add your button container styles here, e.g., background color, padding, etc. */
 }
+
+.thumb {
+    top: 50vh;
+    right: 5vw;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    padding: 0px;
+}
+
+/*Email*/
+.lightbox-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
