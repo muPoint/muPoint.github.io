@@ -3,99 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-        <title>muPoint</title>
-            
+    <title>modelViewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    
+    
+    <style>
+    </style>
 </head>
-
-<header>
-    <h2>muPoint</h2>
-    
-    <div class="menu-btn">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="https://mupoint.github.io/modelViewer.html">modelViewer</a></li>
-            <li><a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a></li>
-            <li><a href="https://mupoint.github.io/codeViewer.html">codeViewer</a></li>
-        </ul>
-    </nav>
-</header>
-
 <body>
-    
-    <div class="content">
-      <div class="custom-cursor"></div>
-      
-      <div class="pageHeader">
-          <caption>Studio ACMP</caption>
-          <h1></br>modelViewer</h1>
-          <p>Augmented Reality</p>
-          <p>3D Printing</p>
+    <header>
+        <div align="right">
+            <h3>© muPoint</h3>
+            </br></br>
+            <h1>galleryViewer </h1>
+            <h2>drawing </br> with code</h2>
+        </div>
+    </header>
+
+    <section class="menu">
+    <input id="toggle" type="checkbox"></input>
+    <label for="toggle" class="hamburger">
+        <div class="top-line"></div>
+        <div class="middle-line"></div>
+        <div class="bottom-line"></div>
+    </label>
+
+    <div class="nav">
+      <div class="nav-wrapper">
+          <nav>
+            <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
+            <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
+            <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
+            <a href="#">about</a>
+          </nav>
       </div>
-    
-        <div class="modelViewer">
-          <model-viewer
-              id="model1"
-              src="https://mupoint.github.io/Untitled.glb"
-              alt="Model 1"
-              auto-rotate
-              camera-controls
-              ar
-              ar-modes="webxr scene-viewer quick-look"
-              ios-src="https://mupoint.github.io/Untitled.usdz"
-              ar-scale="auto"
-              ar-placement="floor"
-              style="width: 100%; height: 400px; display: block;"
-          ></model-viewer>
-
-          <model-viewer
-              id="model2"
-              src="https://mupoint.github.io/skates.glb"
-              auto-rotate
-              camera-controls
-              ar
-              ar-modes="webxr scene-viewer quick-look"
-              ios-src="https://mupoint.github.io/skates.usdz"
-              ar-scale="auto"
-              ar-placement="floor"
-              alt="Model 2"
-              style="width: 100%; height: 400px; display: none;"
-          ></model-viewer>
-
-          <model-viewer
-              id="model3"
-              src="https://mupoint.github.io/camera.glb"
-              alt="Model 3"
-              auto-rotate
-              camera-controls
-              ar
-              ar-modes="webxr scene-viewer quick-look"
-              ios-src="https://mupoint.github.io/camera.usdz"
-              ar-scale="auto"
-              ar-placement="floor"
-              style="width: 100%; height: 400px; display: none;"
-          ></model-viewer>
-        
-          <!--Buttons-->
-          <button class="modelViewer-btn" onclick="showModel('model1')">Show Model 1</button>
-          <button class="modelViewer-btn" onclick="showModel('model2')">Show Model 2</button>
-          <button class="modelViewer-btn" onclick="showModel('model3')">Show Model 3</button>
-        </div>
-        
-        <div class="pageFooter">
-            <caption>Copyrights ACMP</br></caption>
-            <caption>email</br></caption>
-            <caption>Instagram</br></caption>
-        </div>
-        
     </div>
+    </section>
     
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <section class="model-viewer">
+        <model-viewer
+            id="model1"
+            src="https://mupoint.github.io/Untitled.glb"
+            alt="Model 1"
+            auto-rotate
+            camera-controls
+            disable-zoom
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ios-src="https://mupoint.github.io/Untitled.usdz"
+            ar-scale="auto"
+            ar-placement="floor"
+            style="width: 100%; height: 100vh; display: block;"
+            skybox-image="https://mupoint.github.io/Anim2D1.png"
+            shadow-intensity="3" shadow-softness="1">
+        </model-viewer>
+
+        <model-viewer
+            id="model2"
+            src="https://mupoint.github.io/skates.glb"
+            auto-rotate
+            camera-controls
+            disable-zoom
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ios-src="https://mupoint.github.io/skates.usdz"
+            ar-scale="auto"
+            ar-placement="floor"
+            alt="Model 2"
+            style="width: 100%; height: 100vh; display: none;"
+            skybox-image="https://mupoint.github.io/Anim2D1.png"
+            shadow-intensity="3" shadow-softness="1">
+        </model-viewer>
+
+        <model-viewer
+            id="model3"
+            src="https://mupoint.github.io/camera.glb"
+            alt="Model 3"
+            auto-rotate
+            camera-controls
+            disable-zoom
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ios-src="https://mupoint.github.io/camera.usdz"
+            ar-scale="auto"
+            ar-placement="floor"
+            style="width: 100%; height: 100vh; display: none;"
+            skybox-image="https://mupoint.github.io/Anim2D1.png"
+            shadow-intensity="3" shadow-softness="1">
+        </model-viewer>
+        
+        <div class="thumb-container">
+            <button onclick="showModel('model1')">
+                <img src="https://mupoint.github.io/thumb1.png"
+                    class="thumb"></img>
+            </button>
+            <button class="thumb" onclick="showModel('model2')">
+                <img src="https://mupoint.github.io/thumb2.png"
+                    class="thumb"></img>
+            </button>
+            <button class="thumb" onclick="showModel('model3')"><img src="https://mupoint.github.io/thumb3.png"
+                class="thumb"></img>
+            </button>
+        </div>
+    </section>
+      
+<footer>
+    <p>email</p>
+    <p>⇲</p>
+</footer>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js">
+</script>
+    
+    
     
 </body>
 </html>
+
