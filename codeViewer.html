@@ -3,215 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>muPoint</title>
-            
+    <title>codeViewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    
+    
+    <style>
+        /* Gallery container */
+           .gallery-container {
+               flex-direction: column;
+               overflow-y: scroll;
+               height: 100vh;
+               width: 100%;
+               scroll-snap-type: y mandatory;
+           }
+
+           /* Gallery item */
+           .gallery-item {
+               height: 100vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               scroll-snap-align: start;
+           }
+           
+           .custom-video {
+               height: 100vh;
+           }
+    </style>
 </head>
-
-<style>
-    /* Gallery container */
-    .gallery-container {
-        position: relative;
-        display: flex;
-        flex-direction: column; /* Change to vertical direction */
-        overflow-y: scroll; /* Enable vertical scrolling */
-        height: 100vh;
-        width: 100%;
-    }
-
-    /* Gallery item */
-    .gallery-item {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        min-height: 100vh; /* Adjust height */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0;
-    }
-
-    /* Images in the gallery */
-    .gallery-item img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-    }
-    
-    .custom-video {
-        height: 100%;
-    }
-    
-    .prev-arrow,
-    .next-arrow {
-        position: absolute;
-        top: 50vh;
-        font-size: 0px;
-    }
-
-</style>
-
-<header>
-    <div class="menu-btn">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="https://mupoint.github.io/index.html">modelViewer</a></li>
-            <li><a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a></li>
-            <li><a href="https://mupoint.github.io/codeViewer.html">codeViewer</a></li>
-        </ul>
-    </nav>
-    
-    <h2>muPoint</h2>
-</header>
-
 <body>
-    
-<div class="content">
-      <div class="custom-cursor"></div>
-      
-      <div align="right" class="heading">
-          <p>©Studio ACMP</p>
-          <h1></br>codeViewer</h1>
-          <p>Drawing</p>
-          <p>with code</p>
-      </div>
-   
-   <div class="gallery-container">
-       <div class="gallery-item">
-           <video
-               class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="https://mupoint.github.io/Anim2D3.png"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="https://mupoint.github.io/Anim2D5.mov" type="video/mov">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <div class="gallery-item">
-           <video class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="https://mupoint.github.io/Anim2D4.png"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="https://mupoint.github.io/Anim2D4.mov" type="video/mov">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <div class="gallery-item">
-           <video class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="https://mupoint.github.io/Anim2D5.png"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="https://mupoint.github.io/Anim2D5.mov" type="video/mp4">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <!-- Add more gallery items as needed -->
-   </div>
-   
-   <div class="prev-arrow">⌃</div>
-   <div class="next-arrow">⌄</div>
-   
-   <div class="bullet-container">
-       <div class="bullet"></div>
-       <div class="bullet"></div>
-       <div class="bullet"></div>
-       <!-- Add more bullets for additional gallery items -->
-   </div>
-       
-</div>
+    <header>
+        <div align="right">
+            <h3>© muPoint</h3>
+            </br></br>
+            <h1>galleryViewer </h1>
+            <h2>drawing </br> with code</h2>
+        </div>
+    </header>
 
+    <section class="menu">
+    <input id="toggle" type="checkbox"></input>
+    <label for="toggle" class="hamburger">
+        <div class="top-line"></div>
+        <div class="middle-line"></div>
+        <div class="bottom-line"></div>
+    </label>
+
+    <div class="nav">
+      <div class="nav-wrapper">
+          <nav>
+            <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
+            <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
+            <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
+            <a href="#">about</a>
+          </nav>
+      </div>
+    </div>
+    </section>
+    
+<div class="gallery-container">
+      <div class="gallery-item">
+        <video>
+            controlsList="nodownload"
+            controlsList="nofullscreen"
+            poster="https://mupoint.github.io/Anim2D3.png"
+            preload="metadata"
+            autoplay
+            x-webkit-airplay="deny">
+            <source src="https://mupoint.github.io/Anim2D5.mov" type="video/mov">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+      
+    <div class="gallery-item">
+        <video class="custom-video"
+            controlsList="nodownload"
+            controlsList="nofullscreen"
+            poster="https://mupoint.github.io/Anim2D4.png"
+            preload="metadata"
+            autoplay
+            x-webkit-airplay="deny">
+            <source src="https://mupoint.github.io/Anim2D4.mov" type="video/mov">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="gallery-item">
+        <video class="custom-video"
+            controlsList="nodownload"
+            controlsList="nofullscreen"
+            poster="https://mupoint.github.io/Anim2D5.png"
+            preload="metadata"
+            autoplay
+            x-webkit-airplay="deny">
+            <source src="https://mupoint.github.io/Anim2D5.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+</div>
+    
+     <div class="bullet-container">
+         <div class="bullet"></div>
+         <div class="bullet"></div>
+         <div class="bullet"></div>
+         <!-- Add more bullets for additional gallery items -->
+     </div>
+    
+<footer>
+    <p>email</p>
+    <p>⇲</p>
+</footer>
+    
 <script>
-    const galleryContainer = document.querySelector('.gallery-container');
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
+    const galleryContainerBullets = document.querySelector('.gallery-container');
     const bullets = document.querySelectorAll('.bullet');
 
-    let currentIndex = 0;
+    let currentIndexBullets = 0;
 
     function updateBullets() {
-        bullets.forEach((bullet, index) => {
-            if (index === currentIndex) {
-                bullet.classList.add('active');
+            bullets.forEach((bullet, index) => {
+        if (index === currentIndexBullets) {
+            bullet.classList.add('active');
             } else {
-                bullet.classList.remove('active');
-            }
-        });
-    }
+            bullet.classList.remove('active');
+                       }
+                   });
+               }
 
-    prevArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
-            updateBullets();
-        }
-    });
+    function scrollToIndexBullets(index) {
+                   currentIndexBullets = index;
+                   galleryContainerBullets.scrollTo({
+                       top: currentIndexBullets * galleryContainerBullets.clientHeight,
+                       behavior: 'smooth'
+                   });
+                   updateBullets();
+               }
 
-    nextArrow.addEventListener('click', () => {
-        if (currentIndex < galleryContainer.children.length - 1) {
-            currentIndex++;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
-            updateBullets();
-        }
-    });
+               bullets.forEach((bullet, index) => {
+                   bullet.addEventListener('click', () => {
+                       scrollToIndexBullets(index);
+                   });
+               });
 
-    bullets.forEach((bullet, index) => {
-        bullet.addEventListener('click', () => {
-            currentIndex = index;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
-            updateBullets();
-        });
-    });
+               galleryContainerBullets.addEventListener('scroll', () => {
+                   const scrollTop = galleryContainerBullets.scrollTop;
+                   const itemHeight = galleryContainerBullets.clientHeight;
+                   const newIndex = Math.floor(scrollTop / itemHeight);
 
-    galleryContainer.addEventListener('scroll', () => {
-        currentIndex = Math.round(galleryContainer.scrollTop / galleryContainer.clientHeight);
-        updateBullets();
-    });
+                   if (newIndex !== currentIndexBullets) {
+                       currentIndexBullets = newIndex;
+                       updateBullets();
+                   }
+               });
 
-    // Initialize bullets
-    updateBullets();
-    
-    /* MENU */
-    const menuBtn = document.querySelector('.menu-btn');
-    const navbar = document.querySelector('.navbar');
-
-    menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active');
-        navbar.classList.toggle('active');
-    });
-    
-    /* CURSOR */
-    const customCursor = document.querySelector('.custom-cursor');
-
-    document.addEventListener('mousemove', (e) => {
-        // Update the cursor's position
-        customCursor.style.left = `${e.clientX}px`;
-        customCursor.style.top = `${e.clientY}px`;
-    });
-    
-    
-</script>
-
+               // Initialize bullets
+               updateBullets();
+    </script>
 </body>
-
-<footer>
-    <p>email</br></p>
-    <p align="right">⇲</p>
-</footer>
-
-
 </html>
-
-
 
