@@ -318,8 +318,8 @@ nav a:hover:before {
         position: absolute;
         align-items: top;
         display: flex;
-        top: 15vh;
-        right: 0px;
+        top: 5vh;
+        right: 15vw;
         margin: 0px;
         transform: rotate(90deg);
         z-index: 4;
