@@ -307,16 +307,23 @@ nav a:hover:before {
 }
 
 @media only screen and (max-device-width: 1024px) {
-
     header {
         position: absolute;
         align-items: top;
         display: flex;
-        top: 5vh;
-        right: 20vw;
+        top: 15vh;
+        right: 0px;
         margin: 0px;
         transform: rotate(90deg);
         z-index: 4;
+    }
+    
+    .prev-arrow-arrow {
+       display: none;
+    }
+    
+    .next-arrow {
+        display: none;
     }
     
 }
