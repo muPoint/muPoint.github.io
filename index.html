@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modelViewer</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    
-    
+
     <style>
     </style>
 </head>
@@ -94,15 +92,15 @@
         </model-viewer>
         
         <div class="thumb-container">
-            <button onclick="showModel('model1')">
+            <button name="Show model 1" onclick="showModel('model1')">
                 <img src="https://mupoint.github.io/thumb1.png"
                     class="thumb"></img>
             </button>
-            <button class="thumb" onclick="showModel('model2')">
+            <button name="Show model 1" class="thumb" onclick="showModel('model2')">
                 <img src="https://mupoint.github.io/thumb2.png"
                     class="thumb"></img>
             </button>
-            <button class="thumb" onclick="showModel('model3')"><img src="https://mupoint.github.io/thumb3.png"
+            <button name="Show model 1" class="thumb" onclick="showModel('model3')"><img src="https://mupoint.github.io/thumb3.png"
                 class="thumb"></img>
             </button>
         </div>
@@ -126,9 +124,6 @@ function showModel(modelId) {
     modelViewer.style.display = 'block';
 }
 </script>
-    
-    
-    
 </body>
 </html>
 
