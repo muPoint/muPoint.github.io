@@ -306,3 +306,18 @@ nav a:hover:before {
     padding: 0px;
 }
 
+@media only screen and (max-device-width: 1024px) {
+
+    header {
+        position: absolute;
+        align-items: top;
+        display: flex;
+        top: 25vh;
+        right: 5vw;
+        margin: 0px;
+        transform: rotate(90deg);
+        z-index: 4;
+    }
+    
+}
+
