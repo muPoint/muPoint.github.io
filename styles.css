@@ -312,8 +312,8 @@ nav a:hover:before {
         position: absolute;
         align-items: top;
         display: flex;
-        top: 25vh;
-        right: 5vw;
+        top: 5vh;
+        right: 20vw;
         margin: 0px;
         transform: rotate(90deg);
         z-index: 4;
