@@ -18,7 +18,7 @@ header {
     align-items: top;
     display: flex;
     top: 15vh;
-    right: 5vw;
+    right: 6vw;
     margin: 0px;
     transform: rotate(90deg);
     z-index: 4;
@@ -27,7 +27,7 @@ header {
 footer {
     position: absolute;
     bottom: 10px;
-    right: 5vh;
+    right: 5vw;
 }
 
 button {
@@ -47,7 +47,7 @@ button {
 .hamburger {
   position: absolute;
   top: 5vh;
-  right: 5vh;
+  right: 5vw;
   width: 1.5em;
   height: 30px;
   background-color: white;
@@ -220,7 +220,7 @@ nav a:hover:before {
 
 .prev-arrow {
     position: absolute;
-    right: 5.5vh;
+    right: 5.5vw;
     top: 46vh;
     transform: translateY(-50%);
     cursor: pointer;
@@ -232,7 +232,7 @@ nav a:hover:before {
 
 .next-arrow {
     position: absolute;
-    right: 5.5vh;
+    right: 5.5vw;
     top: 55.5vh;
     transform: translateY(-50%);
     cursor: pointer;
@@ -246,7 +246,7 @@ nav a:hover:before {
 .counter {
     position: absolute;
     top: 49vh;
-    right: 5vh;
+    right: 5vw;
 }
 
 
