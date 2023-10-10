@@ -1,198 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>muPoint</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muPoint</title>
+    <link rel="stylesheet" href="styles.css">
+        
+    <style>
+        /* Gallery container */
+        .gallery-container {
+            flex-direction: column;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
                     
-        <style>
-            /* Gallery container */
-            .gallery-container {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                scroll-snap-type: y mandatory;
-                overflow-y: scroll;
-                height: 100vh;
-                width: 100%;
-            }
-                        
-            /* Gallery item */
-            .gallery-item {
-                flex: 0 0 100%;
-                scroll-snap-align: start;
-                min-height: 100vh; /* Adjust height */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #f0f0f0;
-            }
-                        
-            /* Images in the gallery */
-            .gallery-item img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: contain;
-            }
-                        
-            .custom-video {
-                height: 100%;
-            }
-                        
-            .prev-arrow,
-            .next-arrow {
-                position: absolute;
-                top: 50vh;
-                font-size: 0px;
-            }
-                        
-        </style>
+        /* Gallery item */
+        .gallery-item {
+            min-height: 100vh;
+        }
                     
-    </head>
+        .custom-video {
+            height: 100%;
+        }
+    </style>
+</head>
 
 <body>
     <header>
-        <div align="">
-            <h3>© muPoint</h3>
-            </br></br>
-            <h1>codeViewer</h1>
-            <h2>drawing with code</h2>
-        </div>
-    </header>
-    
-    <section class="menu">
-        <input id="toggle" type="checkbox"></input>
-        <label for="toggle" class="hamburger">
-            <div class="top-line"></div>
-            <div class="middle-line"></div>
-            <div class="bottom-line"></div>
-        </label>
-
-        <div class="nav">
-            <div class="nav-wrapper">
-                <nav>
-                    <a href="https://mupoint.github.io/index.html">modelViewer</a>
-                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a>
-                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a>
-                    <a href="https://mupoint.github.io/projectsViewer.html">portfolioViewer</a>
+        <section class="menu-container" style=" flex-direction: column;">
+            <button id="menu-button" class="menu-button">+</button>
+            <div id="menu" style="display: none;">
+                <nav class="nav-wrapper">
+                    <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
+                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
+                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
                     <a href="#">about</a>
                 </nav>
             </div>
-        </div>
-    </section>
+        </section>
+
+    <div class="heading">
+        <h3>© muPoint</h3>
+        <br /><br />
+        <h1>galleryViewer </h1>
+        <h2>drawing with code</h2>
+    </div>
     
-   <div class="gallery-container">
-       <div class="gallery-item">
-           <video
-               class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="video1-poster.jpg"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="https://mupoint.github.io/Anim2D4.mov" type="video/mov">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <div class="gallery-item">
-           <video class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="video1-poster.jpg"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D2.mov" type="video/mp4">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <div class="gallery-item">
-           <video class="custom-video"
-               controlsList="nodownload"
-               controlsList="nofullscreen"
-               poster="video1-poster.jpg"
-               preload="metadata"
-               autoplay
-               x-webkit-airplay="deny">
-               <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D4.mov" type="video/mp4">
-               Your browser does not support the video tag.
-           </video>
-       </div>
-       <!-- Add more gallery items as needed -->
-   </div>
-   
-   <div class="prev-arrow">⌃</div>
-   <div class="next-arrow">⌄</div>
-   
-   <div class="bullet-container">
-       <div class="bullet"></div>
-       <div class="bullet"></div>
-       <div class="bullet"></div>
-       <!-- Add more bullets for additional gallery items -->
-   </div>
- 
-</div>
+    </header>
+    
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <video
+                class="custom-video"
+                controlsList="nodownload"
+                controlsList="nofullscreen"
+                poster="video1-poster.jpg"
+                preload="metadata"
+                autoplay
+                <source src="https://mupoint.github.io/Anim2D4.mov" type="video/mov">
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video class="custom-video"
+                controlsList="nodownload"
+                controlsList="nofullscreen"
+                poster="video1-poster.jpg"
+                preload="metadata"
+                autoplay
+                <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D2.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video class="custom-video"
+                controlsList="nodownload"
+                controlsList="nofullscreen"
+                poster="video1-poster.jpg"
+                preload="metadata"
+                autoplay
+                <source src="/Users/mupoint/Documents/XCode/website/assets/Anim2D4.mov" type="video/mp4">
+            </video>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+    
+    <div class="prev-arrow"></div>
+    <div class="next-arrow"></div>
+    
+    <div class="thumb-container">
+        <div class="bullet"></div>
+        <div class="bullet"></div>
+        <div class="bullet"></div>
+        <!-- Add more bullets for additional gallery items -->
+    </div>
+  
+ </div>
+       
+    <footer>
+        <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
+    </footer>
+    
+    <script>
+        /* codeViewer Bullets*/
 
-<footer>
-    <p>email⇲</p>
-</footer>
+        const galleryContainer = document.querySelector('.gallery-container');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        const bullets = document.querySelectorAll('.bullet');
 
-<script>
-    const galleryContainer = document.querySelector('.gallery-container');
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
-    const bullets = document.querySelectorAll('.bullet');
+        let currentIndex = 0;
 
-    let currentIndex = 0;
+        function updateBullets() {
+            bullets.forEach((bullet, index) => {
+                if (index === currentIndex) {
+                    bullet.classList.add('active');
+                } else {
+                    bullet.classList.remove('active');
+                }
+            });
+        }
 
-    function updateBullets() {
-        bullets.forEach((bullet, index) => {
-            if (index === currentIndex) {
-                bullet.classList.add('active');
-            } else {
-                bullet.classList.remove('active');
+        prevArrow.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+                updateBullets();
             }
         });
-    }
 
-    prevArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
-            updateBullets();
-        }
-    });
+        nextArrow.addEventListener('click', () => {
+            if (currentIndex < galleryContainer.children.length - 1) {
+                currentIndex++;
+                galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+                updateBullets();
+            }
+        });
 
-    nextArrow.addEventListener('click', () => {
-        if (currentIndex < galleryContainer.children.length - 1) {
-            currentIndex++;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
-            updateBullets();
-        }
-    });
+        bullets.forEach((bullet, index) => {
+            bullet.addEventListener('click', () => {
+                currentIndex = index;
+                galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+                updateBullets();
+            });
+        });
 
-    bullets.forEach((bullet, index) => {
-        bullet.addEventListener('click', () => {
-            currentIndex = index;
-            galleryContainer.scrollTo({ top: currentIndex * galleryContainer.clientHeight, behavior: 'smooth' });
+        galleryContainer.addEventListener('scroll', () => {
+            currentIndex = Math.round(galleryContainer.scrollTop / galleryContainer.clientHeight);
             updateBullets();
         });
-    });
 
-    galleryContainer.addEventListener('scroll', () => {
-        currentIndex = Math.round(galleryContainer.scrollTop / galleryContainer.clientHeight);
+        // Initialize bullets
         updateBullets();
-    });
-
-    // Initialize bullets
-    updateBullets();
-
-</script>
+    </script>
+    
+    <script src="script.js" defer></script>
 
 </body>
 </html>
-
-
-
