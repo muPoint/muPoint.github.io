@@ -216,18 +216,6 @@ figcaption {
     object-fit: contain;
 }
 
-
-
-
-.bullet-container {
-    position: absolute;
-    top: 50vh;
-    right: 5vw;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-}
-
 .bullet {
     width: 10px;
     height: 10px;
