@@ -231,12 +231,16 @@ figcaption {
 
 
 @media only screen and (max-device-width: 1024px) {
-    .prev-arrow, 
+    .prev-arrow {
+        display: none;
+    }
+    
     .next-arrow {
         display: none;
     }
     
     .caption-button {
         top: 60vh;
+        left: 5vw;
     }
 }
