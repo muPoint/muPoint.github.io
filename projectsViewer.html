@@ -2,123 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="viewport-fit=cover">
-    <meta name="theme-color" content="transparent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>muPoint</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        .tab-buttons {
-            position: absolute;
-            bottom: 10vh;
-            right: 50%;
-        }
-        
-        /* Styles for tab buttons */
-        .tab-button {
-            background-color: #eee;
-            padding: 10px 20px;
-            border: none;
-        }
-
-        .tab-button.active {
-            background-color: #ccc;
-        }
-
-        /* Styles for tab content */
-        .tab-content {
-            display: none;
-        }
-
-        /* Show the active tab content */
-        .tab-content.active {
-            display: block;
-        }
-    </style>
 </head>
+
 <body>
     <header>
-        <div>
-            <h3>© muPoint</h3>
-            <br /><br />
-            <h1>projectsViewer </h1>
-            <h2>portfolio</h2>
-        </div>
-    </header>
-
-    <section class="menu">
-        <input id="toggle" type="checkbox"></input>
-        <label for="toggle" class="hamburger">
-            <div class="top-line"></div>
-            <div class="middle-line"></div>
-            <div class="bottom-line"></div>
-        </label>
-
-        <div class="nav">
-            <div class="nav-wrapper">
-                <nav>
-                    <a href="https://mupoint.github.io/index.html">modelViewer</a>
-                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a>
-                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a>
-                    <a href="https://mupoint.github.io/projectsViewer.html">portfolioViewer</a>
+        <section class="menu-container">
+            <button id="menu-button" class="menu-button">+</button>
+            <div id="menu" style="display: none;">
+                <nav class="nav-wrapper">
+                    <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
+                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
+                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
                     <a href="#">about</a>
                 </nav>
             </div>
-        </div>
-    </section>
+        </section>
+
+    <div class="heading">
+        <h3>© muPoint</h3>
+        <br /><br />
+        <h1>projectsViewer </h1>
+        <h2>portfolio</h2>
+    </div>
     
+    </header>
     <section class="gallery-container">
-            <div class="tab-buttons">
-                <button class="tab-button active" onmouseover="showTab('tab1')">Tab 1</button>
-                <button class="tab-button" onmouseover="showTab('tab2')">Tab 2</button>
-                <button class="tab-button" onmouseover="showTab('tab3')">Tab 3</button>
-            </div>
-            <div id="tab1" class="tab-content">
-                <!-- Content for Tab 1 -->
+        <figure id="tab1" class="tab-content">
+            <!-- Content for Tab 1 -->
+            <img src="https://mupoint.github.io/Anim2D1.png" alt="Image 1">
+            <button
+                class="caption-button"
+                onclick="toggleCaption('caption1', this)">Info</button>
+            <figcaption id="caption1">
                 <h2>Tab 1 Content</h2>
                 <p>This is the content for Tab 1.</p>
-                <img src="https://mupoint.github.io/Anim2D1.png" alt="Image 1">
-            </div>
-            <div id="tab2" class="tab-content">
-                <!-- Content for Tab 2 -->
+            </figcaption>
+        </figure>
+        
+        <figure id="tab2" class="tab-content">
+            <!-- Content for Tab 2 -->
+            <img src="https://mupoint.github.io/Anim2D2.png" alt="Image 2">
+            <button
+                class="caption-button"
+                onclick="toggleCaption('caption2', this)">Info</button>
+            <figcaption id="caption2">
                 <h2>Tab 2 Content</h2>
                 <p>This is the content for Tab 2.</p>
-                <img src="https://mupoint.github.io/Anim2D2.png" alt="Image 2">
-            </div>
-            <div id="tab3" class="tab-content">
-                <!-- Content for Tab 3 -->
+             </<figcaption>
+        </figure>
+        
+        <figure id="tab3" class="tab-content">
+            <!-- Content for Tab 3 -->
+            <img src="https://mupoint.github.io/Anim2D1.png" alt="Image 3">
+            <button
+                class="caption-button"
+                onclick="toggleCaption('caption3', this)">Info</button>
+            <figcaption id="caption3">
                 <h2>Tab 3 Content</h2>
                 <p>This is the content for Tab 3.</p>
-                <img src="https://mupoint.github.io/Anim2D1.png" alt="Image 3">
-            </div>
+             </<figcaption>
+        </figure>
+            
+        <div class="thumb-container">
+            <button
+                class="tab-button active"
+                onmouseover="showTab('tab1')">Tab 1
+            </button>
+            <button
+                class="tab-button"
+                onmouseover="showTab('tab2')">Tab 2
+            </button>
+            <button
+                class="tab-button"
+                onmouseover="showTab('tab3')">Tab 3
+            </button>
+        </div>
     </section>
-
+       
     <footer>
-        <p>email⇲</p>
+        <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
     </footer>
-
-<script>
-    function showTab(tabId) {
-        // Hide all tab content
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        // Deactivate all tab buttons
-        const tabButtons = document.querySelectorAll('.tab-button');
-        tabButtons.forEach(button => button.classList.remove('active'));
-
-        // Show the selected tab content
-        document.getElementById(tabId).classList.add('active');
-
-        // Activate the hovered tab button
-        const activeButton = document.querySelector(`[onmouseover="showTab('${tabId}')"]`);
-        activeButton.classList.add('active');
-    }
-
-    // Initially show the first tab
-    showTab('tab1');
-
-</script>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>
-
