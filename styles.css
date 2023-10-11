@@ -104,7 +104,7 @@ nav a:hover:before {
 
 .heading {
     position: absolute;
-    top: 16vh;
+    top: 15vh;
     right: 5vw !important;
     padding: 10px;
     transform: rotate(90deg);
@@ -239,7 +239,13 @@ figcaption {
 
 
 @media only screen and (max-device-width: 1024px) {    
-
+    .heading {
+        position: absolute;
+        top: 17vh;
+        right: 5vw !important;
+        transform: rotate(90deg);
+        z-index: 3;
+    }
     
     .prev-arrow, 
     .next-arrow {
