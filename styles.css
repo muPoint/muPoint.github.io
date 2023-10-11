@@ -240,7 +240,14 @@ figcaption {
     background-color: #007bff;
 }
 
+@media (orientation: portrait) {
+    .nav-wrapper {width: 100vh;}
+}
 
+@media (orientation: landscape) {
+    .nav-wrapper {width: 100vh;}
+    footer (left: 5vw;)
+}
 
 @media only screen and (max-device-width: 1024px) {
     .prev-arrow,
