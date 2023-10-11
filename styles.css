@@ -238,15 +238,7 @@ figcaption {
 
 
 
-@media only screen and (max-device-width: 1024px) {    
-    .heading {
-        position: absolute;
-        top: 17vh;
-        right: 5vw !important;
-        transform: rotate(90deg);
-        z-index: 3;
-    }
-    
+@media only screen and (max-device-width: 1024px) {       
     .prev-arrow, 
     .next-arrow {
         display: none;
