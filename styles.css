@@ -67,8 +67,6 @@ a:hover {
   right: 5vw;
   overflow: hidden;
   display: flex;
-  padding: 50px;
-  width: 100vh;
   background-color: white;
   border: 0.2px solid black;
   z-index: 999;
@@ -240,18 +238,20 @@ figcaption {
     background-color: #007bff;
 }
 
-@media (orientation: portrait) {
-    .nav-wrapper {height: 100vh;}
-}
 
-@media (orientation: landscape) {
-    .nav-wrapper {width: 100vh;}
-    footer {left: 50px;}
-}
 
 @media only screen and (max-device-width: 1024px) {
     .prev-arrow,
     .next-arrow {
         display: none;
     }
+}
+
+@media (orientation: portrait) {
+    nav {flex-direction: column;}
+}
+
+@media (orientation: landscape) {
+    nav {flex-direction: row;}
+    footer {left: 50px;}
 }
