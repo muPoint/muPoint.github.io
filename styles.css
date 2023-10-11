@@ -238,7 +238,7 @@ figcaption {
 .heading {
     position: absolute;
     top: 15vh;
-    right: 0;
+    right: 0px;
     padding: 10px;
     transform: rotate(90deg);
     z-index: 3;
