@@ -35,6 +35,13 @@ button: hover {
     background-color: #007bff;
 }
 
+
+.ar-button: {
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -67,7 +74,8 @@ a:hover {
   padding: 30px;
   height: 100vh;
   background-color: white;
-  z-index: 5;
+  border: 0.2px solid black;
+  z-index: 999;
 }
 
 nav a {
@@ -106,7 +114,6 @@ nav a:hover:before {
     z-index: 3;
 }
 
-
 /* Gallery */
 
 .gallery-container {
@@ -144,9 +151,8 @@ nav a:hover:before {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 999;
+    z-index: 6;
 }
-
 
 .caption-button {
     position: absolute;
