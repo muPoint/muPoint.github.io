@@ -10,7 +10,6 @@ menuButton.addEventListener('click', () => {
     menuButton.textContent = menu.style.display === 'none' ? '+' : 'x';
 });
 
-
 /* modelViewer Buttons */
 function showModel(modelId) {
     const modelViewer = document.querySelector(`#${modelId}`);
