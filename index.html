@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xml:lang="en" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +36,7 @@
             id="model1"
             src="https://mupoint.github.io/Untitled.glb"
             alt="Model 1"
+            loading="lazy"
             auto-rotate
             camera-controls
             disable-zoom
@@ -48,14 +49,14 @@
             shadow-intensity="3" shadow-softness="1"
             class="gallery-item"
             style="display: block;">
-             <button slot="ar-button">  👋 Activate AR </button>
-    
             
+            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
         </model-viewer>
 
         <model-viewer
             id="model2"
             src="https://mupoint.github.io/skates.glb"
+            loading="lazy"
             auto-rotate
             camera-controls
             disable-zoom
@@ -69,12 +70,15 @@
             shadow-intensity="3" shadow-softness="1"
             class="gallery-item"
             style="display: none;">
+            
+            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
         </model-viewer>
 
         <model-viewer
             id="model3"
             src="https://mupoint.github.io/camera.glb"
             alt="Model 3"
+            loading="lazy"
             auto-rotate
             camera-controls
             disable-zoom
@@ -87,6 +91,8 @@
             shadow-intensity="3" shadow-softness="1"
             class="gallery-item"
             style="display: none;">
+            
+            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
         </model-viewer>
             
         <div class="thumb-container">
