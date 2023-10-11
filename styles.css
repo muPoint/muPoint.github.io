@@ -241,12 +241,12 @@ figcaption {
 }
 
 @media (orientation: portrait) {
-    .nav-wrapper {width: 100vh;}
+    .nav-wrapper {height: 100vh;}
 }
 
 @media (orientation: landscape) {
     .nav-wrapper {width: 100vh;}
-    footer (left: 5vw;)
+    footer {left: 50px;}
 }
 
 @media only screen and (max-device-width: 1024px) {
