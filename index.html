@@ -11,27 +11,27 @@
     <header>
         <section class="menu-container">
             <button id="menu-button" class="menu-button">+</button>
-            <div id="menu" style="display: none;">
-                <nav class="nav-wrapper">
-                    <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
-                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
-                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
-                    <a href="https://mupoint.github.io/projectsViewer.html">projectsViewer</a><br>
-                    <a href="#">about</a>
+                
+            <nav class="nav-wrapper" id="menu" style="display: none;">
+                    <ul>
+                        <li><a href="https://mupoint.github.io/index.html">modelViewer</a></li>
+                        <li><a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a></li>
+                        <li><a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br></li>
+                        <li><a href="https://mupoint.github.io/projectsViewer.html">projectsViewer</a></li>
+                        <li><a href="#">about</a></li>
+                    </ul>
                 </nav>
-            </div>
         </section>
-
-    <div class="heading">
-        <h3>© muPoint</h3>
-        <br /><br />
-        <h1>modelViewer </h1>
-        <h2>3D(P)</h2>
-    </div>
-    
     </header>
-    
+        
     <main>
+        
+        <div class="heading">
+            <h3>© muPoint</h3>
+            <br /><br />
+            <h1>galleryViewer </h1>
+            <h2>drawing with code</h2>
+        </div>
         
     <section class="gallery-container">
         <model-viewer
@@ -42,17 +42,17 @@
             auto-rotate
             camera-controls
             disable-zoom
-            skybox-image="https://mupoint.github.io/Anim2D1.png"
-            shadow-intensity="3" shadow-softness="1"
-            class="gallery-item"
-            style="display: block;"
             ar
             ar-modes="webxr scene-viewer quick-look"
             ios-src="https://mupoint.github.io/Untitled.usdz"
             ar-scale="auto"
-            ar-placement="floor">
+            ar-placement="floor"
+            skybox-image="https://mupoint.github.io/Anim2D1.png"
+            shadow-intensity="3" shadow-softness="1"
+            class="gallery-item"
+            style="display: block;">
             
-           <button slot="ar-button" style=" position: absolute; top: 15px; left: 15px;">Activate AR</button>
+            <button slot="ar-button" class="ar-button" ar>Activate AR</button>
         </model-viewer>
 
         <model-viewer
@@ -73,7 +73,8 @@
             class="gallery-item"
             style="display: none;">
             
-            <button slot="ar-button" style=" position: absolute; top: 15px; left: 15px;">Activate AR</button>        </model-viewer>
+            <button slot="ar-button" style=" position: absolute; top: 15px; left: 15px;">Activate AR</button>
+        </model-viewer>
 
         <model-viewer
             id="model3"
@@ -93,7 +94,7 @@
             class="gallery-item"
             style="display: none;">
             
-            <button slot="ar-button" style=" position: absolute; top: 15px; left: 15px;">Activate AR</button>   
+            <button slot="ar-button" class="ar-button" ar>  Activate AR</button>
         </model-viewer>
             
         <div class="thumb-container">
@@ -119,6 +120,7 @@
     </section>
     
     </main>
+    
     <footer>
         <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
     </footer>
