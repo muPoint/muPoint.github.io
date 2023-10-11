@@ -238,6 +238,15 @@ figcaption {
 
 
 @media only screen and (max-device-width: 1024px) {
+    .heading {
+        position: absolute;
+        top: 15vh;
+        right: 2vw !important;
+        padding: 10px;
+        transform: rotate(90deg);
+        z-index: 3;
+    }
+    
     .prev-arrow,
     .next-arrow {
         display: none;
