@@ -31,12 +31,14 @@
     
     </header>
     
+    <main>
+        
     <section class="gallery-container">
         <model-viewer
             id="model1"
+            loading="lazy"
             src="https://mupoint.github.io/Untitled.glb"
             alt="Model 1"
-            loading="lazy"
             auto-rotate
             camera-controls
             disable-zoom
@@ -50,13 +52,13 @@
             class="gallery-item"
             style="display: block;">
             
-            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
+            <button slot="ar-button" class="ar-button" ar>Activate AR</button>
         </model-viewer>
 
         <model-viewer
             id="model2"
-            src="https://mupoint.github.io/skates.glb"
             loading="lazy"
+            src="https://mupoint.github.io/skates.glb"
             auto-rotate
             camera-controls
             disable-zoom
@@ -71,14 +73,14 @@
             class="gallery-item"
             style="display: none;">
             
-            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
+            <button slot="ar-button" class="ar-button" ar>Activate AR</button>
         </model-viewer>
 
         <model-viewer
             id="model3"
+            loading="lazy"
             src="https://mupoint.github.io/camera.glb"
             alt="Model 3"
-            loading="lazy"
             auto-rotate
             camera-controls
             disable-zoom
@@ -92,7 +94,7 @@
             class="gallery-item"
             style="display: none;">
             
-            <button slot="ar-button" class="ar-button">cube  Activate AR</button>
+            <button slot="ar-button" class="ar-button" ar>  Activate AR</button>
         </model-viewer>
             
         <div class="thumb-container">
@@ -116,7 +118,8 @@
             </button>
         </div>
     </section>
-       
+    
+    </main>
     <footer>
         <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
     </footer>
