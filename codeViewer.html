@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xml:lang="en" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,28 +26,29 @@
 </head>
 
 <body>
-    <header>
-        <section class="menu-container" style=" flex-direction: column;">
-            <button id="menu-button" class="menu-button">+</button>
-            <div id="menu" style="display: none;">
-                <nav class="nav-wrapper">
-                    <a href="https://mupoint.github.io/index.html">modelViewer</a><br>
-                    <a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a><br>
-                    <a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br>
-                     <a href="https://mupoint.github.io/projectsViewer.html">projectsViewer</a><br>
-                    <a href="#">about</a>
-                </nav>
-            </div>
-        </section>
+<header>
+    <section class="menu-container">
+        <button id="menu-button" class="menu-button">+</button>
+                
+        <nav class="nav-wrapper" id="menu" style="display: none;">
+                <ul>
+                    <li><a href="https://mupoint.github.io/index.html">modelViewer</a></li>
+                    <li><a href="https://mupoint.github.io/galleryViewer.html">galleryViewer</a></li>
+                    <li><a href="https://mupoint.github.io/codeViewer.html">codeViewer</a><br></li>
+                    <li><a href="https://mupoint.github.io/projectsViewer.html">projectsViewer</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </nav>
+    </section>
+</header>
 
+<main>
     <div class="heading">
         <h3>© muPoint</h3>
         <br /><br />
-        <h1>galleryViewer </h1>
-        <h2>drawing with code</h2>
+        <h1>projectsViewer </h1>
+        <h2>portfolio</h2>
     </div>
-    
-    </header>
     
     <div class="gallery-container">
         <div class="gallery-item">
@@ -94,11 +95,12 @@
         <!-- Add more bullets for additional gallery items -->
     </div>
   
- </div>
-       
-    <footer>
-        <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
-    </footer>
+  </div>
+ </main>
+   
+<footer>
+    <a href=https://mu-point.com><p style="font-size: 13px;">email</br>⇲</p></a>
+</footer>
     
     <script>
         /* codeViewer Bullets*/
