@@ -108,6 +108,30 @@
                 right: 5vw;
                 z-index: 4;
             }
+            
+            @media only screen and (max-device-width: 1024px) {
+                .prev-arrow,
+                .next-arrow {
+                    display: none;
+                }
+            }
+
+            @media (orientation: portrait) {
+                nav {
+                    flex-direction: column;
+                }
+                
+                .nav-wrapper {
+                    width: 50vw;
+                }
+            }
+
+            @media (orientation: landscape) {
+                nav {
+                    flex-direction: row;
+                }
+            }
+            
         </style>
 </head>
 
@@ -143,7 +167,7 @@
                     srcset="">
                 <img
                     sizes=""
-                    src="https://mupoint.github.io/IMG_0749.heic"
+                    src="/Users/mupoint/Library/Mobile Documents/com~apple~CloudDocs/Xcode/web/assets/IMG_0749.heic"
                     alt="photography created with light">
             </picture>
             
