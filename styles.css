@@ -114,6 +114,11 @@ nav a:hover:before {
 }
 
 /* Gallery */
+.model-viewer {
+    background-image: url("https://muPoint.github.io/IMG_0648.heic");
+    width: 100%;
+    height: auto;
+}
 
 .gallery-container {
     position: relative;
