@@ -6,9 +6,8 @@
 body {
     font-family: monospace, sans-serif;
     font-size: 11px;
-    cursor: crosshair;
-   
-    background-image: url("https://mupoint.github.io/IMG_0648.heic");
+    cursor: crosshair;   
+    background-color: blue;
     box-sizing: inherit;
 }
 
