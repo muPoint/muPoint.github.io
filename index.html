@@ -14,18 +14,12 @@
             <a href="projects.html" class="button">Projects</a>
         </div>
         <div class="card">
-            <img src="ar-image.png" alt="AR Experience" class="ar-image" id="ar-image">
+            <a href="https://mupoint.github.io/RobotTalk.reality" rel="ar">
+                <img src="ar-image.png" alt="AR Experience" class="ar-image">
+            </a>
             <p class="description">This is an AR experience. Scan this image on an iOS device.</p>
         </div>
     </div>
-    <script>
-    document.getElementById('ar-image').addEventListener('click', function() {
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.location.href = 'https://mupoint.github.io/RobotTalk.reality';
-        } else {
-            alert('AR experience is available on iOS devices only.');
-        }
-    });
-    </script>
 </body>
 </html>
+
