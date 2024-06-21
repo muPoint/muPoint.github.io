@@ -48,10 +48,18 @@ body, html {
     text-align: center;
 }
 
+.ar-link {
+    display: none; /* Hide the AR link by default */
+}
+
 .ar-image {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.non-ios {
+    display: none; /* Hide the non-iOS image by default */
 }
 
 .description {
@@ -59,3 +67,22 @@ body, html {
     color: #333;
 }
 
+/* Show AR link only on iOS devices */
+@supports (-webkit-touch-callout: none) {
+    .ar-link {
+        display: block;
+    }
+    .non-ios {
+        display: none;
+    }
+}
+
+/* Show static image on non-iOS devices */
+@supports not (-webkit-touch-callout: none) {
+    .ar-link {
+        display: none;
+    }
+    .non-ios {
+        display: block;
+    }
+}
