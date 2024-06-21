@@ -67,8 +67,8 @@ body, html {
     color: #333;
 }
 
-/* Show AR link only on iOS devices */
-@supports (-webkit-touch-callout: none) {
+/* Show AR link on mobile devices */
+@media (max-width: 767px) {
     .ar-link {
         display: block;
     }
@@ -77,12 +77,12 @@ body, html {
     }
 }
 
-/* Show static image on non-iOS devices */
-@supports not (-webkit-touch-callout: none) {
-    .ar-link {
-        display: none;
-    }
+/* Show static image on non-mobile devices */
+@media (min-width: 768px) {
     .non-ios {
         display: block;
+    }
+    .ar-link {
+        display: none;
     }
 }
