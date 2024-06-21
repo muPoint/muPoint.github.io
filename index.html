@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="buttons">
+            <a href="about.html" class="button">About</a>
+            <a href="projects.html" class="button">Projects</a>
+        </div>
+        <div class="card">
+            <img src="ar-image.png" alt="AR Experience" class="ar-image" id="ar-image">
+            <p class="description">This is an AR experience. Scan this image on an iOS device.</p>
+        </div>
+    </div>
+    <script>
+    document.getElementById('ar-image').addEventListener('click', function() {
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = 'path-to-your-ar-file.reality';
+        } else {
+            alert('AR experience is available on iOS devices only.');
+        }
+    });
+    </script>
+</body>
+</html>
