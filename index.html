@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Rich Media Landing Page</title>
+    <meta name="description" content="Scan to see special content and visit our full website">
     <style>
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
         .popup {
             display: none;
             position: fixed;
@@ -37,6 +38,7 @@
             display: block;
             margin-top: 20px;
             text-align: center;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -46,6 +48,7 @@
         <h2>Welcome!</h2>
         <p>Click the button below to visit our full website.</p>
         <button id="visitSiteBtn">Visit Full Website</button>
+        <div class="close-btn" id="closeBtn">Close</div>
     </div>
 
     <script>
@@ -57,7 +60,13 @@
         document.getElementById('visitSiteBtn').onclick = function() {
             window.location.href = 'https://www.full-website.com';
         };
+
+        document.getElementById('closeBtn').onclick = function() {
+            document.querySelector('.overlay').classList.remove('active');
+            document.querySelector('.popup').classList.remove('active');
+        };
     </script>
 </body>
 </html>
+
 
