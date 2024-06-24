@@ -1,88 +1,141 @@
-body, html {
-    height: 100%;
+body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    background-color: white;
+    font-size: 12px;
+    line-height: 1.6; /* Adjust the line height as needed */
 }
 
 .container {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100%;
+    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
-.logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.buttons {
-    margin-bottom: 20px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px;
-    color: white;
-    background-color: #007BFF;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-.card {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 300px;
-    text-align: center;
-}
-
-.ar-link {
-    display: none; /* Hide the AR link by default */
-}
-
-.ar-image {
+.top-bar, .bottom-bar {
     width: 100%;
-    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 10px 10px;
+    margin: 20px;
+    font-size: 12px;
     cursor: pointer;
+    font-family: 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
 }
 
-.non-ios {
-    display: none; /* Hide the non-iOS image by default */
+button:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
-.description {
-    margin-top: 10px;
-    color: #333;
+.vertical-line {
+    width: 1px;
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateX(-50%);
 }
 
-/* Show AR link only on iOS devices */
-@supports (-webkit-touch-callout: none) {
-    .ar-link {
-        display: block;
-    }
-    .non-ios {
-        display: none;
-    }
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    width: 80%;
+    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.gallery img {
+    max-width: 100%;
+    margin: 10px 0;
 }
 
-/* Show static image on non-iOS devices */
-@supports not (-webkit-touch-callout: none) {
-    .ar-link {
-        display: none;
-    }
-    .non-ios {
-        display: block;
-    }
+
+.text-content {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
+    padding: 20px;
+    line-height: 1.6; /* Adjust the line height as needed */
 }
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    width: 80%;
+    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 20px;
+    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
+}
+
+.timeline-event {
+    position: relative;
+    width: 80%;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    left: -7.5px;
+    top: 20px;
+}
+
+.timeline-event.left::before {
+    left: auto;
+    right: -7.5px;
+}
+
+.timeline-event.right {
+    align-self: flex-end;
+}
+
+.timeline-event.right::before {
+    left: auto;
+    right: -7.5px;
+}
+
+
