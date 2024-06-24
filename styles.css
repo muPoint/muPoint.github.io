@@ -17,7 +17,7 @@ body {
 
 .top-bar, .bottom-bar {
     width: 100%;
-    padding: 50px;
+    padding: 20px;
     display: flex;
     border-top: black 1px solid;
     border-bottom: black 1px solid;
@@ -57,6 +57,7 @@ button:hover {
     flex-direction: row;
     align-items: center;
     overflow-x: scroll;
+    overflow-y: hidden;
     width: 80%;
     height: calc(80vh - 80px); /* Adjust for top and bottom bars */
     scroll-snap-type: x mandatory;
@@ -70,7 +71,7 @@ button:hover {
 
 .text-content {
     display: flex;
-    width: 30%;
+    width: 80%;
     justify-content: center;
     align-items: center;
     height: calc(80vh - 80px); /* Adjust for top and bottom bars */
@@ -89,13 +90,11 @@ button:hover {
     scroll-behavior: smooth;
 }
 
-
-
 .timeline-container {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    align-items: center;
+    align-items: left;
     overflow-y: scroll;
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -106,8 +105,8 @@ button:hover {
 .timeline-event {
     position: relative;
     width: 80%;
-    padding: 20px;
-    margin: 20px 0;
+    padding: 10px;
+    margin: 20px 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
