@@ -4,7 +4,7 @@ body {
     background-color: white;
     font-size: 12px;
     line-height: 1.6; /* Adjust the line height as needed */
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .container {
@@ -55,77 +55,23 @@ button:hover {
     transform: translateX(-50%);
 }
 
-.gallery {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    width: 80%;
-    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-}
-.gallery img {
-    max-width: 100%;
-    margin: 10px 0;
-}
-
-
-.text-content {
-    display: flex;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
-    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
-    padding: 20px;
-    line-height: 1.6; /* Adjust the line height as needed */
-}
-
-.notes {
-    display: flex;
-    padding: 20px;
-    line-height: 1.6; /* Adjust the line height as needed */
-}
-
-.footer {
-    display: flex;
-    width: 60%;
-    justify-content: left;
-    align-items: top;
-    height: calc(20vh - 20px); /* Adjust for top and bottom bars */
-    padding: 20px;
-    line-height: 1.6; /* Adjust the line height as needed */
-}
-
-.gallery {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow-x: scroll;
-    width: 80%;
-    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-}
-
 .timeline-container {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    align-items: left;
+    align-items: right;
     overflow-y: scroll;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    padding: 20px;
-    height: calc(80vh - 80px); /* Adjust for top and bottom bars */
+    padding: 0px;
+    height: calc(80vh - 100px); /* Adjust for top and bottom bars */
 }
 
 .timeline-event {
     position: relative;
-    width: 80%;
-    padding: 10px;
-    margin: 20px 10px;
+    width: 40%;
+    padding: 2%;
+    margin: 20px 50px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -156,4 +102,41 @@ button:hover {
     right: -7.5px;
 }
 
+.text-content {
+    display: flex;
+    width: 50%;
+    justify-content: left;
+    align-items: left;
+    padding: 20px;
+    line-height: 1.6; /* Adjust the line height as needed */
+}
 
+
+.gallery {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidde    
+    height: calc(50vh - 200px); /* Adjust for top and bottom bars */
+    width: 50%;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.gallery img {
+    max-width: 100%;
+    margin: 0px 0;
+    filter: grayscale(100%);
+    transition: filter 0.3s; /* Smooth transition for hover effect */
+}
+
+.gallery img:hover {
+    filter: grayscale(0%);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+}
