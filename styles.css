@@ -70,7 +70,7 @@ button:hover {
 .timeline-event {
     position: relative;
     width: 40%;
-    padding: 50px;
+    padding: 2vw;
     margin: 20px 50px;
     background-color: #fff;
     border-radius: 8px;
