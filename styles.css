@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
     background-color: white;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.6; /* Adjust the line height as needed */
     overflow: hidden;
 }
@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
 }
 
 .top-bar, .bottom-bar {
@@ -64,7 +64,7 @@ button:hover {
     scroll-behavior: smooth;
     box-sizing: border-box;
     padding: 0px;
-    height: calc(80vh - 100px); /* Adjust for top and bottom bars */
+    height: calc(60vh - 50px); /* Adjust for top and bottom bars */
 }
 
 .timeline-event {
@@ -104,11 +104,13 @@ button:hover {
 
 .text-content {
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: left;
     align-items: left;
     padding: 20px;
     line-height: 1.6; /* Adjust the line height as needed */
+    height: calc(20vh - 50px); /* Adjust for top and bottom bars */
+
 }
 
 
@@ -118,8 +120,8 @@ button:hover {
     align-items: center;
     flex-direction: row;
     overflow-x: scroll;
-    overflow-y: hidde    
-    height: calc(50vh - 200px); /* Adjust for top and bottom bars */
+    overflow-y: hidden;
+    height: calc(100vh - 100px); /* Adjust for top and bottom bars */
     width: 50%;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
