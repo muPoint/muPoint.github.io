@@ -141,5 +141,7 @@ button:hover {
 
 
 @media only screen and (max-width: 768px) {
-
+ .gallery {
+        width: 60%;
+    }
 }
