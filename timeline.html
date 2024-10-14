@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Scroll Timeline</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        overflow-x: hidden;
+        color: white;
+        background-color: black;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      main {
+        z-index: 99;
+        position: absolute;
+        width: 100vw;
+        height: 300vh; /* Making the page taller for scrolling */
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+      }
+
+      h1 {
+        font-size: 5vh;
+        position: fixed;
+        top: 10px;
+        width: 100%;
+        z-index: 99;
+        pointer-events: none;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 20px;
+        font-size: 4vh;
+        color: white;
+        z-index: 99;
+      }
+
+      #scrollProgress {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 2vh;
+        z-index: 99;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <span id="scrollProgress"></span>
+    <main>
+      <h1>3D Timeline - Scroll to Animate</h1>
+      <section>
+        <h2>2020 - Event 1</h2>
+        <p>Details of the first event.</p>
+      </section>
+      <section>
+        <h2>2021 - Event 2</h2>
+        <p>Details of the second event.</p>
+      </section>
+      <section>
+        <h2>2022 - Event 3</h2>
+        <p>Details of the third event.</p>
+      </section>
+      <section>
+        <h2>2023 - Event 4</h2>
+        <p>Details of the fourth event.</p>
+      </section>
+    </main>
+
+    <script type="module">
+      import * as THREE from 'three';
+
+      // Basic Three.js Setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Add a cube to the scene
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      cube.position.set(0, 0, -10); // Position cube initially
+
+      // Resize handler
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // Lerp function for smooth interpolation
+      function lerp(x, y, a) {
+        return (1 - a) * x + a * y;
+      }
+
+      // Animation timeline
+      const animationScripts = [
+        {
+          start: 0,
+          end: 25,
+          func: () => {
+            cube.position.z = lerp(-10, 0, scalePercent(0, 25)); // Move cube from -10 to 0 in Z axis
+          },
+        },
+        {
+          start: 25,
+          end: 50,
+          func: () => {
+            cube.rotation.x = lerp(0, Math.PI, scalePercent(25, 50)); // Rotate cube on X axis
+          },
+        },
+        {
+          start: 50,
+          end: 75,
+          func: () => {
+            camera.position.y = lerp(1, 3, scalePercent(50, 75)); // Move camera upward
+            camera.lookAt(cube.position); // Always look at the cube
+          },
+        },
+        {
+          start: 75,
+          end: 100,
+          func: () => {
+            cube.rotation.y += 0.01; // Rotate cube continuously after 75%
+          },
+        },
+      ];
+
+      let scrollPercent = 0;
+
+      // Scroll event listener
+      document.body.onscroll = () => {
+        const scrollPosition =
+          (document.documentElement.scrollTop || document.body.scrollTop) /
+          ((document.documentElement.scrollHeight || document.body.scrollHeight) -
+            document.documentElement.clientHeight);
+        scrollPercent = scrollPosition * 100;
+        document.getElementById('scrollProgress').innerText =
+          'Scroll Progress: ' + scrollPercent.toFixed(2) + '%';
+      };
+
+      // Helper function to calculate the current animation range
+      function scalePercent(start, end) {
+        return (scrollPercent - start) / (end - start);
+      }
+
+      // Function to execute animations based on scroll position
+      function playScrollAnimations() {
+        animationScripts.forEach((script) => {
+          if (scrollPercent >= script.start && scrollPercent <= script.end) {
+            script.func();
+          }
+        });
+      }
+
+      // Main animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        playScrollAnimations();
+        renderer.render(scene, camera);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>
