@@ -6,12 +6,12 @@
     <a-scene>
       <a-assets>
         <!-- Adding the autoplay attribute to ensure video plays automatically -->
-        <video id="boxVideo" src="EarthRise.mp4" autoplay loop="true"></video>
+        <video id="boxVideo" src="EarthRise.mp4" autoplay="true"></video>
         <img id="boxTexture" src="texture.jpg">
       </a-assets>
 
       <!-- Applying the video texture to the box using the material component -->
-      <a-box src="#boxVideo" position="0 2 -5" rotation="0 0 0" scale="1 1 1" repeat="true">
+      <a-box src="#boxVideo" position="0 2 -5" rotation="0 0 0" scale="1 1 1">
       </a-box>
 
       <a-sky color="#222"></a-sky>
