@@ -12,6 +12,7 @@
 
       <!-- Applying the video texture to the box using the material component -->
       <a-box src="#boxVideo" position="0 2 -5" rotation="0 0 0" scale="3 3 3">
+        <a-animation attribute="material.src" to="#boxVideo" dur="0" repeat="indefinite"></a-animation>
       </a-box>
 
       <a-sky color="#222"></a-sky>
