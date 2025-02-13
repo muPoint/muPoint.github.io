@@ -9,10 +9,9 @@
         <video id="video" src="EarthRise.mp4" autoplay loop="true"></video>
         <img id="boxTexture" src="texture.jpg">
       </a-assets>
-
-      <!-- Applying the video texture to the box using the material component -->
-      <a-videosphere   rotation="0 -90 0" src="#video" visible="false" play-on-click>
-      </a-videosphere>
+       <a-box src="#video" position="0 2 -5" rotation="0 0 0" scale="1 1 1">
+        </a-box>
+    
       <a-sky color="#222"></a-sky>
     </a-scene>
   </body>
