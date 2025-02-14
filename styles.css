@@ -88,7 +88,7 @@ h1, h2 {
   flex: 0 0 auto; /* Prevents flexbox from resizing items */
   max-width: 20vw;
   max-height:30vh;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
