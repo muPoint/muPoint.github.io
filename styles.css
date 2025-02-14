@@ -7,10 +7,10 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #fff;
     color: white;
     padding: 1rem;
-    text-align: center;
+    text-align: right;
 }
 
 header nav ul {
@@ -24,8 +24,16 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: blue;
+}
+
+footer {
+    margin-left: 2rem;
 }
 
 section {
@@ -55,6 +63,56 @@ h1, h2 {
     'GRAD' 0,
     'opsz' 48;
 }
+
+button {
+  font-family: 'YourVariableFont', sans-serif;
+  font-weight: 400; /* Default weight */
+  transition: font-weight 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  font-weight: 700; /* Increase weight on hover */
+}
+
+.tab-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.tab-link {
+    display: inline-block;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 0;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+}
+
+input[type="radio"]:checked + label {
+    background-color: #ccc; /* Active tab style */
+}
+
+.tab-content {
+    display: none; /* Hide all tab content by default */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+    display: block; /* Show the selected tab's content */
+}
+
 
 /* Gallery styling */
 .gallery {
