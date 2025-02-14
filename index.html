@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your name and what you do">
     <title>muPoint.work</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to your CSS -->
+    <link rel="stylesheet" href="styles.css">
+       
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=forward_to_inbox" />
+
 </head>
 <body>
     <header>
@@ -14,7 +18,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#email">Email</a></li>
             </ul>
         </nav>
     </header>
@@ -24,75 +28,56 @@
         <p>Collaboration between Ana Catarina Pereira and Artificial Intelligence. - Aiming to bridge her background in technology with artistic practice, Pereira founded muPoint, in collaboration with ChatGPT. As an Apple Developer with expertise in Metal shading language, her work focuses on exploring the potential of augmented reality through image processing techniques, machine learning models, and device sensors. Ultimately, her goal is to investigate the  possibilities of spatial intelligence.
         </p>
     </section>
+    
+    <section class="gallery">
+            <!-- Image 1 -->
+            <div class="gallery-item">
+                <img src="texture.jpg" alt="Image 1" />
+                <figcaption>Image 1 Description</figcaption>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="gallery-item">
+                <a ref="ar" scr="TextWebsite.usdz">
+                    <img src="moon.jpg" alt="Image 2" />
+                </a>
+                <figcaption>Image 2 Description</figcaption>
+            </div>
+      
+            <!-- Image 3 -->
+            <div class="gallery-item">
+                <img src="texture.jpg" alt="Image 3" />
+                <figcaption>Image 3 Description</figcaption>
+            </div>
+
+            <!-- Video 1 -->
+            <div class="gallery-item">
+                <video controls>
+                    <source src="EarthRise.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Video 1 Description</figcaption>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="gallery-item">
+                <video controls>
+                    <source src="EarthRise.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Video 2 Description</figcaption>
+            </div>
+      </div>
+    </section>
 
     <section id="about">
         <h2>About</h2>
         <p>Born in Portugal, Ana Catarina Pereira currently lives in London. Her academic journey in the arts began with a Mixed Media course at the University of Westminster, followed by a master’s degree at Chelsea College of Arts. Her work has been shown worldwide, culminating in the prestigious Clifford Chance/UAL Sculpture Award and a bursary from the Royal British Society of Sculptors. Additionally, her professional life includes roles as a SAP consultant and a visiting scholar at Evora University.</p>
     </section>
 
-    <section class="gallery">
-      <!-- Image 1 -->
-      <div class="gallery-item">
-        <img src="texture.jpg" alt="Image 1" />
-        <figcaption>Image 1 Description</figcaption>
-      </div>
 
-      <!-- Image 2 -->
-      <div class="gallery-item">
-        <a ref="ar" scr="TextWebsite.usdz">
-            <img src="moon.jpg" alt="Image 2" />
-        </a>
-        <figcaption>Image 2 Description</figcaption>
-      </div>
-      
-      <!-- Image 3 -->
-      <div class="gallery-item">
-        <img src="texture.jpg" alt="Image 3" />
-        <figcaption>Image 3 Description</figcaption>
-      </div>
-
-      <!-- Video 1 -->
-      <div class="gallery-item">
-        <video controls>
-          <source src="EarthRise.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <figcaption>Video 1 Description</figcaption>
-      </div>
-
-      <!-- Video 2 -->
-      <div class="gallery-item">
-        <video controls>
-          <source src="EarthRise.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <figcaption>Video 2 Description</figcaption>
-      </div>
-      
-      <!-- Video 3 -->
-      <div class="gallery-item">
-        <video controls>
-          <source src="EarthRise.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <figcaption>Video 3 Description</figcaption>
-      </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="your-email-script.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
+    <section id="email">
+        <span class="material-symbols-outlined">forward_to_inbox</span>
     </section>
 
     <footer>
@@ -100,3 +85,4 @@
     </footer>
 </body>
 </html>
+
