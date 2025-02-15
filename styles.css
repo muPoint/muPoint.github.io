@@ -1,10 +1,12 @@
 /* styles.css */
+
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noro sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
 }
+
 
 header {
     background-color: #fff;
@@ -24,12 +26,12 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: black;
+    color: grey;
     text-decoration: none;
 }
 
 header nav ul li a:hover {
-    color: blue;
+    color: #2a778d;
 }
 
 footer {
@@ -43,7 +45,6 @@ section {
 
 h1, h2 {
     color: #333;
-    font-family: 'Noto Sans', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -64,6 +65,7 @@ h1, h2 {
     'opsz' 48;
 }
 
+
 button {
   font-family: 'YourVariableFont', sans-serif;
   font-weight: 400; /* Default weight */
@@ -74,50 +76,10 @@ button:hover {
   font-weight: 700; /* Increase weight on hover */
 }
 
-.tab-container {
-    width: 70%;
-    margin: 0 auto;
-}
-
-.tab-link {
-    display: inline-block;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    margin: 0;
-}
-
-.tab-link:hover {
-    background-color: #ddd;
-}
-
-input[type="radio"] {
-    display: none; /* Hide the radio buttons */
-}
-
-input[type="radio"]:checked + label {
-    background-color: #ccc; /* Active tab style */
-}
-
-.tab-content {
-    display: none; /* Hide all tab content by default */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3 {
-    display: block; /* Show the selected tab's content */
-}
-
-
 /* Gallery styling */
 .gallery {
   display: flex;
-  gap: 20px;
+  gap: 10vw;
   margin: 30px;
   padding: 20px 0;
   overflow-x: auto;
@@ -139,17 +101,16 @@ input[type="radio"]:checked + label {
 }
 
 
-
 /* Gallery item styling */
 .gallery-item {
   flex: 0 0 auto; /* Prevents flexbox from resizing items */
-  max-width: 20vw;
-  max-height:30vh;
-  aspect-ratio: 3 / 4;
+  max-width: 30vw;
+  max-height:40vh;
+  aspect-ratio: 9 / 16;
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   scroll-snap-align: center;
 }
 
@@ -158,6 +119,12 @@ input[type="radio"]:checked + label {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the container */
+}
+
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container */
 }
 
 /* Caption styling */
@@ -170,9 +137,6 @@ figcaption {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .gallery {
-        grid-template-columns: 1fr; /* Single column layout for small screens */
-    }
     .gallery-item {
         max-width: 90vw; /* Adjust for smaller screens */
         max-height: 50vh;
