@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AR Portfolio</title>
+
+  <!-- Import map for Material 3 -->
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  
+  <!-- Import Material Components and styles -->
+  <script type="module">
+    import '@material/web/all.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
+  <!-- Your custom CSS (optional) -->
+  <style>
+      :root {
+           --md-sys-color-primary: #6200ea; /* Purple */
+           --md-sys-color-secondary: #03dac6; /* Teal */
+           --md-sys-color-background: #fafafa; /* Light background */
+           --md-sys-color-surface: #ffffff; /* White surfaces */
+           
+           --md-sys-typography-font-family: 'Noro Sans', sans-serif;
+         }
+
+         /* Apply background color to body */
+         body {
+           font-family: var(--md-sys-typography-font-family);
+           background-color: var(--md-sys-color-background); /* Use background color */
+         }
+
+         /* Style the Material button */
+         material-button {
+           --md-button-color: var(--md-sys-color-primary); /* Set button color */
+           --md-button-surface: var(--md-sys-color-primary); /* Button background */
+         }
+
+         /* Style the material card */
+         material-card {
+           --md-card-surface: var(--md-sys-color-surface); /* Set surface color */
+         }
+      
+    /* Add any custom styles for your project */
+    .project-image {
+      width: 20%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Material Components Example -->
+  <material-card>
+    <img src="Resources/moon.jpg" alt="AR Project" class="project-image">
+    <material-card-header>
+      <h1>AR Project Title</h1>
+      <p>Short description of the AR project.</p>
+    </material-card-header>
+    <material-button>See Demo</material-button>
+  </material-card>
+</body>
+</html>
+
