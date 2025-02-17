@@ -16,6 +16,7 @@ header {
     width: 100%;
     background-color: white; /* Adjust based on your theme */
     z-index: 1000; /* Ensures it stays above other elements */
+    padding: 0rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
     text-align: left;
     opacity: 80%;
@@ -47,7 +48,7 @@ footer {
 }
 
 section {
-    padding: 1.5rem;
+    padding: 2rem;
     margin: 2rem 0;
 }
 
@@ -58,14 +59,13 @@ h1, h2 {
 
 p {
     word-wrap: break-word;
-    padding: 3rem;
+    padding: 10px;
     background: white;
 }
 
 a {
     color: darkblue;
     text-decoration: none;
-    padding: 3rem;
 }
 
 hr {
@@ -74,13 +74,13 @@ hr {
 }
 
 .project-container {
-    margin: 1rem;
+    margin-top: 50px;
     scroll-margin-top: 120px; /* Adjust based on your header height */
 }
 
 .project-nav {
     display: flex;
-    gap: 40px; /* Adds spacing between buttons */
+    gap: 50px; /* Adds spacing between buttons */
     justify-content: flex-start;
     margin-left: 10vw;
 }
@@ -170,7 +170,7 @@ button:hover {
     background-color: black;
     color: white;
     border: none;
-    border-radius: 0px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     display: none; /* Hidden by default */
@@ -189,8 +189,7 @@ html, body {
 /* Responsive Design */
 @media (max-width: 600px) {
     .gallery-item {
-        max-width: 100vw; /* Adjust for smaller screens */
-        max-height: 80vh;
+        max-width: 90vw; /* Adjust for smaller screens */
+        max-height: 60vh;
     }
 }
-
