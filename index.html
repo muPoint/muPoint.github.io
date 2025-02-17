@@ -20,7 +20,7 @@
     
     <section id="home">
         <h1 class="logo">muPoint</h1>
-        <p>A collaboration between ACMP and Artificial Intelligence, exploring augmented reality through image processing, machine learning, and sensors.</p>
+        <p>A creative project, designed in collaboration with Artificial Intelligence, focused on exploring the potential of augmented reality through image processing techniques, machine learning models, and device sensors.</p>
     </section>
     
     <hr>
@@ -28,13 +28,13 @@
     <section id="projects">
         <h1>Projects</h1>
         <div class="project-nav">
-            <a href="#earth-rise">_Earth Rise</a>
-            <a href="#neural-landscapes">_Neural Landscapes</a>
-            <a href="#title-project">_Title</a>
+            <a href="#earth-rise" >EARTH RISE</a>
+            <a href="#neural-landscapes">NEURAL LANDSCAPES</a>
+            <a href="#title-project">TO BE TITLED</a>
         </div>
 
         <div class="project-container" id="earth-rise">
-            <h3>Earth Rise</h3>
+            <h3 class="vertical-text">Earth Rise</h3>
             <div class="gallery">
                 <div class="gallery-item">
                     <video controls preload="auto" poster="Assets/EarthRiseWeb-HEVC.jpeg">
@@ -64,6 +64,21 @@
 </body>
 
 <script>
+    
+    // open in Projects
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            const section = document.getElementById("projects");
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }, 100); // Small delay to ensure Safari renders everything first
+    });
+
+    
+    
+    // Back to Top
     document.addEventListener("DOMContentLoaded", function () {
         const backToTopButton = document.getElementById("backToTop");
 
