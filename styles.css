@@ -188,8 +188,12 @@ html, body {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .gallery-item {
+    .gallery {
+        gap: 20vw;
+    }
+    
+     .gallery-item {
         max-width: 90vw; /* Adjust for smaller screens */
         max-height: 60vh;
-    }
+     }
 }
