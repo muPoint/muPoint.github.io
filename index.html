@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your name and what you do">
+    <title>muPoint.work</title>
+    <link rel="stylesheet" href="styles.css">
+        
+        
+    <link rel="preload" as="image" href="Assets/heic-8.heic">
+    <link rel="preload" as="image" href="Assets/heic-15.heic">
+    <link rel="preload" as="image" href="Assets/Image 2.heic">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">.home</a></li>
+                <li><a href="#projects">.projects</a></li>
+                <li><a href="#about">.about</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1 class="logo">muPoint</h1>
+        <p>A collaboration between ACMP and Artificial Intelligence, exploring augmented reality through image processing, machine learning, and sensors.</p>
+    </section>
+    
+    <hr>
+    
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="project-nav">
+            <a href="#earth-rise">Earth Rise</a>
+            <a href="#neural-landscapes">Neural Landscapes</a>
+            <a href="#title-project">Title</a>
+        </div>
+
+        <div class="project-container" id="earth-rise">
+            <h3>Earth Rise</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <video controls preload="auto" poster="Assets/QRCode.heic">
+                        <source src="Resources/EarthRise.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item"><img src="Assets/heic-8.heic" alt="Earth Rise" loading="lazy"></div>
+                <div class="gallery-item"><img src="Assets/heic-15.heic" alt="Earth Rise" loading="lazy"></div>
+            </div>
+            <p>Inspired by the Earthrise photograph, this AR experience explores Earth’s presence through sound, material, and digital form...</p>
+        </div>
+
+        <div class="project-container" id="neural-landscapes">
+            <h3>Neural Landscapes</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <video controls preload="auto" poster="Assets/Image2.heic">
+                        <source src="Resources/NeuralLandscapes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item"><img src="Assets/Image2.heic" alt="Neural Landscapes" loading="lazy"></div>
+                <div class="gallery-item"><img src="Assets/Image(1)2.heic" alt="Neural Landscapes" loading="lazy"></div>
+            </div>
+            <p>In collaboration with FRS...</p>
+        </div>
+
+        <div class="project-container" id="title-project">
+            <h3>Title</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <video controls preload="auto" poster="Assets/placeholder.jpg">
+                        <source src="Resources/NeuralLandscapes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls preload="auto" poster="Assets/placeholder.jpg">
+                        <source src="Resources/NeuralLandscapes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls preload="auto" poster="Assets/placeholder.jpg">
+                        <source src="Resources/NeuralLandscapes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <p>Swift drawings...</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About</h2>
+        <p>Born in Portugal, ACMP currently lives in London. Her academic journey in the arts began with a Mixed Media course at the University of Westminster...</p>
+    </section>
+
+    <button id="backToTop">↑ Top</button>
+
+    
+    <footer>
+        <p>&copy; 2025 All rights reserved.</p>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) { // Show when scrolled 300px down
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".gallery").style.opacity = "1";
+    });
+
+</script>
+
+
+</html>

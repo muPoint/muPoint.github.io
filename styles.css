@@ -1,0 +1,188 @@
+/* styles.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, systtemUI sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white; /* Adjust based on your theme */
+    z-index: 1000; /* Ensures it stays above other elements */
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+}
+
+
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: gray;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+header nav ul li a:hover {
+    color: darkblue;
+}
+
+footer {
+    margin-left: 2rem;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+h1, h2 {
+    color: #333;
+    font-weight: 200;
+}
+
+p {
+    word-wrap: break-word;
+    padding: 10px;
+    background: white;
+}
+
+
+
+hr {
+    color: lightgray;
+    line-height: 1px;
+}
+
+
+.project-nav {
+    display: flex;
+    gap: 15px; /* Adds spacing between buttons */
+    justify-content: flex-start;
+    margin-left: 10vw;
+}
+
+button {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    transition: font-weight 0.3s ease; /* Smooth transition */
+    padding: 10px;
+    border: 1px solid lightgray; /* Optional: Adds a subtle border */
+    cursor: pointer; /* Improves UX */
+}
+
+button:hover {
+    font-weight: 700; /* Increase weight on hover */
+}
+
+.gallery {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+/* Gallery styling */
+.gallery {
+  display: flex;
+  gap: 10vw;
+  margin: 30px;
+  margin-left: 10vw;
+  padding: 20px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap; /* Ensures items stay in a row */
+}
+
+/* Add hover effects and a smooth transition */
+
+
+/* Hide scrollbar for a cleaner look */
+.gallery::-webkit-scrollbar {
+    display: visibleFill;
+}
+
+.gallery {
+    -ms-overflow-style: visibleFill;  /* IE and Edge */
+    scrollbar-width: visibleFill;  /* Firefox */
+}
+
+
+/* Gallery item styling */
+.gallery-item {
+  flex: 0 0 auto;
+  max-width: 20vw;
+  aspect-ratio: 888 / 1920;
+  background-color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: center;
+}
+
+/* Image styling */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  aspect-ratio: 888 / 1920;
+  object-fit: contain;
+}
+
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  aspect-ratio: 888 / 1920;
+  object-fit: contain;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Hidden by default */
+}
+
+#backToTop:hover {
+    background-color: darkgray;
+}
+
+
+html, body {
+    scroll-behavior: auto;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .gallery-item {
+        max-width: 90vw; /* Adjust for smaller screens */
+        max-height: 50vh;
+    }
+}
+
