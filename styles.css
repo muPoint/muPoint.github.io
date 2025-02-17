@@ -16,16 +16,16 @@ header {
     width: 100%;
     background-color: white; /* Adjust based on your theme */
     z-index: 1000; /* Ensures it stays above other elements */
-    padding: 1rem;
+    padding: 0rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+    text-align: left;
+    opacity: 80%;
 }
-
 
 
 header nav ul {
     list-style: none;
-    padding: 0;
-
+    padding: 2rem;
 }
 
 header nav ul li {
@@ -63,20 +63,28 @@ p {
     background: white;
 }
 
-
+a {
+    color: darkblue;
+    text-decoration: none;
+}
 
 hr {
     color: lightgray;
     line-height: 1px;
 }
 
+.project-container {
+    margin-top: 50px;
+    scroll-margin-top: 120px; /* Adjust based on your header height */
+}
 
 .project-nav {
     display: flex;
-    gap: 15px; /* Adds spacing between buttons */
+    gap: 50px; /* Adds spacing between buttons */
     justify-content: flex-start;
     margin-left: 10vw;
 }
+
 
 button {
     font-family: -apple-system, sans-serif;
@@ -157,12 +165,12 @@ button:hover {
 #backToTop {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 0px;
     padding: 10px 15px;
     background-color: black;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 16px;
     display: none; /* Hidden by default */
@@ -181,7 +189,7 @@ html, body {
 /* Responsive Design */
 @media (max-width: 600px) {
     .gallery-item {
-        max-width: 90vw; /* Adjust for smaller screens */
+        max-width: 100vw; /* Adjust for smaller screens */
         max-height: 50vh;
     }
 }
