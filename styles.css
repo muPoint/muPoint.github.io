@@ -14,9 +14,9 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
+    height: 150%;
     background-color: white; /* Adjust based on your theme */
     z-index: 1000; /* Ensures it stays above other elements */
-    padding: 0rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
     text-align: left;
     opacity: 80%;
@@ -26,6 +26,7 @@ header {
 header nav ul {
     list-style: none;
     padding: 2rem;
+    text-align: right;
 }
 
 header nav ul li {
@@ -61,6 +62,7 @@ p {
     word-wrap: break-word;
     padding: 10px;
     background: white;
+    border-radius: 20px;
 }
 
 a {
@@ -73,34 +75,23 @@ hr {
     line-height: 1px;
 }
 
-.project-container {
-    margin-top: 50px;
-    scroll-margin-top: 120px; /* Adjust based on your header height */
-}
-
 .project-nav {
     display: flex;
     gap: 50px; /* Adds spacing between buttons */
     justify-content: flex-start;
     margin-left: 10vw;
+    margin-top: 3vw;
 }
 
-
-button {
-    font-family: -apple-system, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: white;
-    transition: font-weight 0.3s ease; /* Smooth transition */
-    padding: 10px;
-    border: 1px solid lightgray; /* Optional: Adds a subtle border */
-    cursor: pointer; /* Improves UX */
+.project-container {
+    margin-top: 50px;
+    margin-left: 2vw;
 }
 
-button:hover {
-    font-weight: 700; /* Increase weight on hover */
+.vertical-text {
+    writing-mode: vertical-lr; /* Right-to-left vertical */
+    text-orientation: mixed; /* Keeps letters upright */
 }
-
 
 /* Gallery styling */
 .gallery {
