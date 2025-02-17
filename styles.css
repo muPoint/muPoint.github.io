@@ -101,11 +101,6 @@ button:hover {
     font-weight: 700; /* Increase weight on hover */
 }
 
-.gallery {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
 
 /* Gallery styling */
 .gallery {
@@ -117,6 +112,8 @@ button:hover {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   white-space: nowrap; /* Ensures items stay in a row */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Add hover effects and a smooth transition */
@@ -137,7 +134,7 @@ button:hover {
 .gallery-item {
   flex: 0 0 auto;
   max-width: 20vw;
-  aspect-ratio: 888 / 1920;
+  aspect-ratio: 444 / 960;
   background-color: #000;
   border-radius: 20px;
   overflow: hidden;
@@ -158,9 +155,10 @@ button:hover {
   width: 100%;
   height: 100%;
   max-width: 250px;
-  aspect-ratio: 888 / 1920;
+  aspect-ratio: 444 / 960;
   object-fit: contain;
 }
+
 
 #backToTop {
     position: fixed;
@@ -170,7 +168,7 @@ button:hover {
     background-color: black;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 16px;
     display: none; /* Hidden by default */
@@ -192,8 +190,9 @@ html, body {
         gap: 20vw;
     }
     
-     .gallery-item {
+    .gallery-item {
         max-width: 90vw; /* Adjust for smaller screens */
         max-height: 60vh;
-     }
+    }
 }
+
